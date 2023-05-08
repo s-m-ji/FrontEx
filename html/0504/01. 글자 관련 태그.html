@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>글자관련 태그</title>
+  </head>
+  <body>
+    <h1>글자 관련 태그</h1>
+    <!-- 제목을 지정하는 태그-->
+    <h1>h1 태그</h1>
+    <h2>h2 태그</h2>
+    <h3>h3 태그</h3>
+    <h4>h4 태그</h4>
+    <h5>h5 태그</h5>
+    <h6>h6 태그</h6>
+
+    <!-- 수평선을 넣는 태그-->
+    <hr />
+
+    <!-- 줄바꿈 태그-->
+    안녕하세요.<br />
+    반갑습니다.
+
+    <hr />
+
+    <!-- 문단을 나눠주는 태그 (단락 태그)-->
+    <p>첫번째 단락</p>
+    <p>두번째 단락</p>
+
+    <p>
+      문단 영역을 나누는 <br />
+      - p 태그
+      <br />
+      - pre 태그
+      <br />
+      p태그는 문단 영역을 나누는 태그지만 한 개의 공백만 표시<br />
+      줄바꿈 시에도 별도의 태그를 지정해줘야함. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      !!!
+    </p>
+
+    <pre>
+        pre캐드는 여러칸 띄우기         혹은 
+        줄바꿈 등을 포함하여 입력한 내용 그대로 표현함.
+    </pre>
+
+    <hr />
+    <!-- 기타 글자 관련 태그-->
+    <!-- strong은 브라우저가 문서를 읽을 때 '강조'함. / 반면에 b는 그냥 굵게만 표시-->
+    <strong> strong : 글자를 굵게</strong>
+    <br />
+
+    <b>b : 글자를 굵게</b>
+    <br />
+
+    <i>글자를 기울이는 태그</i>
+    <br />
+
+    <u>글자에 밑줄을 긋는 태그</u>
+    <br />
+
+    <s>글자에 취소선을 넣는 태그</s>
+    <br />
+
+    <mark>형광펜 효과를 나타내는 태그</mark>
+    <br />
+
+    <small>글자를 작게 표시하는 태그</small>
+
+    <p>
+      기본 글자에 <sub>아래 첨자</sub>를 나타내는 태그와 <sup>위 첨자</sup>를
+      나타내는 태그
+    </p>
+
+    <!-- 글자의 약어를 나타낼 경우 abbr 태그와 title 속성을 이용하여
+    약어의 전체 글자나 설명을 제공-->
+    <abbr title="Internet of Things (사물 인터넷)">IoT</abbr>
+    <br />
+
+    <pre><!-- pre 태그의 특징, code 태그를 소개하기 위해 적었음-->
+        <code>
+            function add(num1, num2){ 
+            let sum = num1 + num2;
+            consol.log(sum); 
+            }
+        </code>
+    </pre>
+
+    <!-- 인용 문구를 나타내는 태그-->
+    <!-- blockquote은 들여쓰기(o)-->
+    <blockquote>
+      <q>인용 문구를 나타내는 태그</q>
+      <!-- q는 들여쓰기(x)-->
+      <!-- 기울임꼴로 표시-->
+      <cite>해리포터와 불의잔</cite>
+    </blockquote>
+
+    <p>
+      태그는 중첩하여 사용 할 수 있다.<br />
+      시작태그와 끝태그로 구성이 되며, 간혹 끝 태그가 없는 태그도 존재한다.<br />
+      <b>굵은 글자</b>를 사용할 수도 있고, <i>기울임</i> 글자나 <s>취소선</s>도
+      사용할 수 있다.<br />
+      <mark>형광펜</mark>을 넣어 강조할 수도 있다.
+    </p>
+  </body>
+</html>
