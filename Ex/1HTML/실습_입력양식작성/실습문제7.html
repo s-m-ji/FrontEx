@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <title>주문하기</title>
+    <style>
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 20px;
+      }
+      .flex {display: flex;}
+      .flex li:first-child {margin-right: 10px;}
+      /* .submit {position: relative;}
+      .submit span {position: absolute; }
+      .submit input { margin:25px;}
+      .move {
+    animation-name: moveOn; 
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-timing-function: linear;
+    animation-fill-mode: none;
+    animation-delay: 5s;
+	animation-fill-mode:forwards;
+	}
+
+      @keyframes moveOn {
+        0% {top:0; left:0;}
+        25% {top:0; right:0;}
+        50% {bottom:0; right:0;}
+        100% {bottom:0; left:0;}
+    }
+      /* @keyframes moveOn {
+        to {top:0; left:0;}
+        from {bottom:0; right:0;}
+    } */ 
+    </style>
+    <!-- <script>
+        $( document ).ready( function() {
+        $( '.submit input' ).mouseover( function() {
+          $( '.submit span' ).animate( {
+            bottom:0, left: 0
+          } );
+          $( '.submit span' ).animate( {
+            width: '100%'
+          }, 2000, 'swing' );
+        } );
+      } );
+    </script> -->
+  </head>
+  <body>
+    <h1>🍕주문하기🍕</h2>
+    <form action="" method="">
+      <ul>
+        <li><label>🙋‍♀️ 고객명 : <input type="text" name="name" id='name' autofocus required/></label></li>
+        <li><label>📞 전화번호 : <input type="tel" name="tel" id='tel'/ required></label></li>
+        <li><label>📧 E-mail : <input type="email" name="email" id='email'/ required></label></li>
+      </ul>
+      <fieldset>
+        <legend>✅피자 사이즈</legend>
+        <ul>
+          <li>
+            <input type="radio" name="size" id="s" value="Small" />
+            <label for="s">Small</label>
+        </li>
+        <li>
+            <input type="radio" name="size" id="md" value="Medium" /> 
+            <label for="md">Medium</label>
+        </li>
+        <li><input type="radio" name="size" id="l" value="Large" /> 
+            <label for="l">Large</label>
+          </li>
+        </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>✅토핑 선택</legend>
+        <ul>
+          <li>
+            <input type="checkbox" name="top" id="b" value="베이컨" />
+            <label for="b">베이컨 🥓</label>
+          </li>
+          <li>
+            <input type="checkbox" name="top" id="c" value="치즈" />
+            <label for="c">치즈 🧀</label>
+          </li>
+          <li>
+            <input type="checkbox" name="top" id="o" value="양파" />
+            <label for="o">양파 🧅</label>
+          </li>
+          <li>
+            <input type="checkbox" name="top" id="mr" value="버섯" />
+            <label for="mr">버섯 🍄</label>
+          </li>
+        </ul>
+      </fieldset>
+      <ul>
+        <li>
+            <label for='memo'>⌚희망 배송시간 <input type="time" name="time" id="" /></label></li>
+        <li>
+            <ul class='flex'>
+                <li><label for='memo'>📝배송 시 요청사항 : </label></li>
+                <li><textarea name="memo" id="memo" cols="30" rows="5"></textarea></li>
+            </ul>
+        </li>
+        <li class='submit'><span class='move'>🛵</span><input type="submit" value="주문하기" /></li>
+      </ul>
+    </form>
+  </body>
+</html>

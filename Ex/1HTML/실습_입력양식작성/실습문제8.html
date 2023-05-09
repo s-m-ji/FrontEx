@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>납품관리</title>
+    <style>
+      fieldset,
+      li {
+        margin-bottom: 20px;
+      }
+      .test {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>납품관리</h1>
+    <form action="">
+      <fieldset>
+        <legend>납품자 정보</legend>
+        <ol>
+          <li>
+            <label for="name">납품자명 : </label>
+            <input type="text" id="name" name="name" placeholder="name" />
+          </li>
+          <li>
+            <label for="email">email : </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="answs@naver.com"
+            />
+          </li>
+          <li>
+            <label for="url">홈페이지 : </label>
+            <input
+              type="url"
+              id="url"
+              name="url"
+              placeholder="http://"
+              value="http://"
+            />
+          </li>
+        </ol>
+      </fieldset>
+      <fieldset>
+        <legend>납품정보</legend>
+        <ul>
+          <li>
+            <label for="pName">상품명 : </label
+            ><input type="text" id="pName" name="pName" />
+          </li>
+          <li>
+            <label for="number">납품수량 : </label
+            ><input
+              type="number"
+              id="number"
+              name="number"
+              min="100"
+              placeholder="최소 100"
+            />
+          </li>
+          <li>
+            <label for="range">납품등급 : </label
+            ><input type="range" id="range" name="range" />
+          </li>
+          <li>
+            <label for="txta">기타사항 : </label
+            ><textarea name="txta" id="txta" cols="30" rows="3"></textarea>
+          </li>
+        </ul>
+      </fieldset>
+      <input type="submit" value="send message" />
+      <input type="button" value="새 탭 열기" onclick="window.open()" oncli />
+      <input type="button" value="닫기" onclick="window.close()" />
+      <div class="test">
+        <button onclick="newTabClick()">새창 열기</button>
+        <button onclick="closeTabClick()">새창 닫기</button>
+      </div>
+
+      <script>
+        let myWindow;
+
+        function newTabClick() {
+          //open한 새창을 변수 저장
+          myWindow = window.open(
+            "http://www.naver.com",
+            "네이버팝업",
+            "width=700px,height=800px,scrollbars=yes"
+          );
+        }
+
+        function closeTabClick() {
+          // 변수를 close해 새창을 닫음
+          myWindow.close();
+        }
+      </script>
+    </form>
+  </body>
+</html>

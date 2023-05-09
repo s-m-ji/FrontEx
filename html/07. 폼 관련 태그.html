@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <title>07. 폼 태그 관련</title>
+    <style>
+      ul {
+        list-style: square;
+        /* background-color:   */
+      }
+    </style>
   </head>
   <body>
     <!--  
@@ -22,7 +29,7 @@
            
     -->
     <h1>폼 관련 태그</h1>
-    <h2>폼 태그의 기본 구조</h2>
+    <h3>폼 태그의 기본 구조</h3>
 
     <form action="Order.html" method="get">
       <!-- 
@@ -34,6 +41,10 @@
                     search=검색어&name=value
                     요소가 여러개인 경우 &로 연결
         -->
+      <!-- type="search
+            검색어 입력 후 input 박스 내 오른쪽에 X버튼이 생겨서
+            입력한 내용 삭제가 쉽다
+            검색어 입력 시 입력 필드의 색상이 하늘색으로 바뀐다고요 ?"-->
       검색할 내용 :
       <input
         type="text"
@@ -41,9 +52,11 @@
         size="15"
         placeholder="입력 가능한 필드"
         value="검색어"
+        autofocus
       />
       <br />
-      이메일 : <input type="email" name="email" size="15" value="email" />
+      이메일 :
+      <input type="email" name="email" size="15" value="email" readonly />
       <!--
         submit : 서버에 특정 페이지를 요청함
                 클릭하면 form 요소의 method 요청 전송 방식으로
@@ -82,18 +95,248 @@
 
     <hr />
 
-    <h2>텍스트와 관련된 input 태그</h2>
+    <h3>텍스트와 관련된 input 태그</h3>
     <form>
-      <!-- type='text'
-          한 줄짜리 텍스트를 입력할 수 있는 박스-->
-      아이디 :
+      <ul>
+        <li>
+          <!-- type='text'
+            한 줄짜리 텍스트를 입력할 수 있는 텍스트 박스
+            value : 기본값을 미리 넣어둘 수 있음 -->
+          아이디 :
+          <input
+            type="text"
+            name="userId"
+            required
+            value="아이디"
+            size="20"
+            maxlength="15"
+            placeholder="Id를 입력해줘잉"
+          />
+        </li>
+        <li>
+          <!-- type='password'
+            비밀번호를 입력할 수 있는 텍스트 박스 사용자의 입력값을 확인할 수 없다 -->
+          비밀번호 :
+          <input
+            type="password"
+            name="userPw"
+            required
+            value="비밀번호"
+            size="20"
+            maxlength="15"
+            placeholder="Pw를 입력해줘잉"
+          />
+        </li>
+        <!-- emil|search|url|tel
+            겉모습은 텍스트 필드와 비슷하지만
+            각각 정보에 맞게 세분화된 기능을 제공하는 역할-->
+        <li>
+          <!-- type='email' 
+              submit 될 때 이메일 형식을 체크해준다 -->
+          이메일 :
+          <input
+            type="email"
+            name="userEmail"
+            id="userEmail"
+            placeholder="이메일을 입력해줘잉"
+          />
+        </li>
+        <li>
+          <!-- type='url' 
+              submit 될 때 url 형식(http://)을 체크해준다 -->
+          홈페이지 :
+          <input
+            type="url"
+            name="homePage"
+            id="homePage"
+            placeholder="홈페이지를 입력해줘잉"
+          />
+        </li>
+        <li>
+          검색 :
+          <input
+            type="search"
+            name="searchText"
+            id="searchText"
+            placeholder="검색할 내용을 입력해줘잉"
+          />
+        </li>
+        <li>
+          <!-- datalist 태그
+            텍스트 필드에서 데이터 목록 중 값을 선택하여 입력 -->
+          색상 :
+          <input type="text" name="color" list="myColor" />
+          <datalist id="myColor">
+            <option value="azure">색1: azure</option>
+            <option value="beige">색2: beige</option>
+            <option value="aqua">색3: aqua</option>
+          </datalist>
+        </li>
+      </ul>
+      <input type="submit" value="전송한당" />
+      <!-- 폼 안의 입력 요소를 모두 초기화-->
+      <input type="reset" value="리셋한당" />
+    </form>
+    <h3>숫자와 관련된 input 태그들</h3>
+    <form>
+      <!-- type='number'
+        입력창에 숫자를 입력하는것이 기본이지만 브라우저에 따라서 스핀 박스가 표시되기도 한다
+        (스핀 박스: 입력창 오른쪽에 위/아래 화살표 버튼)-->
       <input
-        type="text"
-        name="userId"
-        size="20"
-        maxlength="15"
-        placeholder="Id를 입력해줘잉"
+        type="number"
+        name="amount"
+        id="amount"
+        value="0"
+        min="0"
+        max="100"
+        step="5"
+      />
+      <br />
+      <!-- type="range"
+        슬라이드발르 통한 숫자 지정 가능-->
+
+      <input
+        type="range"
+        name="point"
+        id="point"
+        min="0"
+        max="1000"
+        step="100"
+        value="300"
+        class="slider_range"
+      />
+      <font size="2" id="slider_value_view">0</font>
+      <br />
+      <input type="submit" value="전송" />
+      <input type="reset" value="초기화" />
+    </form>
+    <script language="javascript">
+      function ShowSliderValue(sVal) {
+        var obValueView = document.getElementById("slider_value_view");
+        obValueView.innerHTML = sVal;
+      }
+
+      var RangeSlider = function () {
+        var range = $(".slider_range");
+
+        range.on("input", function () {
+          ShowSliderValue(this.value);
+        });
+      };
+
+      RangeSlider();
+    </script>
+    <h3>날짜/시간 관련 input 태그</h3>
+    <form>
+      <!-- type="date|month|week|time|datetime|datetime_local"-->
+      date : <input type="date" name="date" id="date" />
+      <input type="date" name="date2" id="date2" value="2023-05-09" />
+      <br />
+      month : <input type="month" name="month" id="month" />
+      <input type="month" name="month2" id="month2" value="2023-05" />
+      <br />
+      time : <input type="time" name="time" id="time" />
+      <input type="time" name="time2" id="time2" value="10:43" />
+      <br />
+      datetime : <input type="datetime" name="" id="" /> <br />
+      크롬, IE, 엣지에서는 지원되지 않음 -> datetime-local로 대체되었음
+      <br />
+      datetime-local : <input type="datetime-local" name="dtl" id="dtl" />
+      <br />
+      week : <input type="week" name="week" id="week" />
+      <input
+        type="week"
+        name="week"
+        id="week"
+        min="2023-W01"
+        max="2023-W30"
+        value="2023-W10"
+      />
+      <br />
+      <input type="submit" value="submit" />
+      <input type="reset" value="reset" />
+    </form>
+    <h3>라디오 버튼과 체크박스</h3>
+    <form>
+      <!-- type="radio"
+            여러 항목 중 한 가지만 선택해야할 경우 사용
+            태그 여러 개를 선언하여 하나의 용도로 사용할 경우 name 속성 값이 같아야한다 -->
+      <fieldset>
+        <legend>성별</legend>
+        <input type="radio" name="gender" id="" value="F" checked />여자
+        <input type="radio" name="gender" id="" value="M" checked />남자
+      </fieldset>
+      <!-- type="checkbox"
+            여러 항목 중 여러가지 선택해도 될 경우 사용
+            태그 여러 개를 선언하여 하나의 용도로 사용할 경우 name 속성 값이 같아야한다 -->
+      <fieldset>
+        <legend>밴드</legend>
+        <input type="checkbox" name="band" id="" value="b1" />실리카겔
+        <input type="checkbox" name="band" id="" value="b2" checked />카디
+        <input type="checkbox" name="band" id="" value="b3" checked />밴디지
+      </fieldset>
+      <input type="submit" value="전~~~송~~~~" />
+      <input type="reset" value="초~~~기~~~화~~~" />
+    </form>
+    <h3>기타 input 태그</h3>
+    <form action="">
+      색상 : <input type="color" name="color" id="color" readonly />
+      <br />
+      파일 선택 :
+      <input type="file" name="uploadFile" id="uploadFile" multiple />
+      <br />
+      <input type="hidden" name="hiddenValue" value="111" />
+      <br />
+      <button><b>버튼</b></button>
+      <button type="submit"><b>전송</b></button>
+      <input type="button" value="버튼" />
+      <input type="submit" value="전송" />
+      <input type="reset" value="초기화" />
+      <input
+        type="image"
+        src="../Ex/1HTML/images/login.png"
+        alt="로그인버튼"
+        value="img버튼"
       />
     </form>
+    <h3>드롭다운 목록 select</h3>
+    <form action="">
+      <!-- select 태그와 option 태그
+          사용자가 내용을 입력하는 것이 아닌 
+          여러 옵션 중에서 선택하게 하고싶을 때 사용하는 드롭다운목록이다.
+          selected : 기본값 -->
+      국적
+      <select name="" id="">
+        <optgroup label="아시아">
+          <option value="ko" selected>한국</option>
+          <option value="ch">중국</option>
+          <option value="jp">일본</option>
+        </optgroup>
+        <optgroup label="유럽">
+          <option value="de">독일</option>
+          <option value="es">스페인</option>
+          <option value="pt">포르투갈</option>
+        </optgroup>
+        <option value="" label="기타"></option>
+      </select>
+      <br />
+      <!-- textarea 태그
+          input type="text"와 비슷하지만 여러줄 입력 가능-->
+      <textarea
+        name=""
+        id=""
+        cols="30"
+        rows="10"
+        style="resize: none"
+      ></textarea>
+      <br />
+      progress : <progress value="30" max="100"></progress>
+      <br />
+      meter :
+      <meter min="0" max="100" value="35" low="60" high="90"></meter>
+      <meter min="0" max="100" value="65" low="60" high="90"></meter>
+      <meter min="0" max="100" value="95" low="60" high="90"></meter>
+    </form>
+    <!-- <p style="margin-bottom: 300px"></p> -->
   </body>
 </html>
