@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS선택자 우선순위</title>
+    <style>
+      @font-face {
+        font-family: "EF_jejudoldam";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+
+      h2 {
+        font-family: "EF_jejudoldam", sans-serif;
+        font-size: 5em;
+      }
+
+      h1 {
+        font-family: "EF_jejudoldam", sans-serif;
+        color: gray;
+      }
+      h1 {
+        color: cornflowerblue;
+      }
+      #test1 {
+        background-color: lightgreen;
+        background-color: bisque !important;
+      }
+      .back_c {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS선택자 우선순위</h1>
+    <h2>젲젷젶줓젴줗</h2>
+    <p>
+      기본적으로 위에서 아래로 적용<br />
+      같은 요소에 다양한 선택자로 CSS 속성이 설정된 경우<br />
+      우선순위에 따라 스타일이 적용된다.<br />
+      <span class="color"
+        >태그 &lt; 클래스 &lt; 아이디 &lt; 인라인 &lt; !important</span
+      >
+    </p>
+    <div id="test1" class="back_c" style="background-color: rgb(252, 191, 167)">
+      우선순위 테스트1
+    </div>
+    <p id="test2">우선순위 테스트2</p>
+  </body>
+</html>

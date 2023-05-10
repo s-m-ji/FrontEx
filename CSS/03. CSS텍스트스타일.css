@@ -1,0 +1,145 @@
+#ff1 {
+  font-family: "Courier New", Courier, monospace;
+}
+#ff2 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+#ff3 {
+  font-family: "Times New Roman", Times, serif;
+}
+/* 글꼴이 없는 경우를 대비해서
+        ,를 이용하여 여라 글꼴을 나열할 수 있음 */
+
+/* 웹폰트 */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+}
+.web-f {
+  background-color: rosybrown;
+  color: #fff;
+}
+
+#f-size1 {
+  font-size: 20px;
+}
+#f-size2 {
+  font-size: 2rem;
+}
+#f-size3 {
+  font-size: 200%;
+}
+
+#f-weight1 {
+  font-weight: 400;
+}
+#f-weight2 {
+  font-weight: 700;
+}
+#f-weight3 {
+  font-weight: bold;
+}
+
+#f-var1 {
+  font-variant: normal;
+}
+#f-var2 {
+  font-variant: small-caps;
+}
+
+#f-style1 {
+  font-style: italic;
+}
+#f-style2 {
+  font-style: oblique;
+}
+
+#c-name {
+  /* 색상을 이름으로 지정 : 웹 안전 색상
+        모든 웹브라우저에서 표현할 수 있는 색상 
+        16가지 기본 색상을 포함한 216가지 */
+  color: cornflowerblue;
+}
+#c-16 {
+  /* #과 16진수 6자리를 합쳐서 색상을 표현
+        앞에서부터 2자리씩 묶어서 빨강(r),초록(g),파랑(b) 색상의 양을 표시
+        중복된 자리값일경우 3자리로 표현 가능 */
+  color: #6495ed;
+}
+#c-rgb {
+  /* 빨,초,파를 0부터 255까지의 수로 표현 */
+  color: rgb(100, 149, 237);
+}
+#c-rgba {
+  color: rgba(100, 149, 237, 1);
+}
+#c-hsl {
+  /* 색상(hue),채도(saturation),명도(lightness) */
+  color: hsl(219, 79%, 66%);
+}
+#c-hsla {
+  color: hsla(219, 79%, 66%, 100%);
+}
+
+.text-deco li {
+  margin: 10px 0;
+  padding: 15px;
+  border: 2px dashed #f80;
+}
+.td-none {
+  text-decoration: none;
+}
+#td-under {
+  text-decoration: underline;
+}
+#td-over {
+  text-decoration: overline;
+}
+#td-thr {
+  text-decoration: line-through;
+}
+a.td-none {
+  color: #666;
+  font-size: 1.5em;
+}
+a.td-none:hover {
+  color: #f80;
+}
+
+#bg {
+  margin: 30px 0;
+  padding: 30px;
+  background-color: #000;
+}
+#ts {
+  text-shadow: 0 0 4px #ccc, 0 -5px 4px #ff3, 2px -10px 6px #fd3,
+    -2px -15px 11px #f80, 2px -19px 18px #f20;
+  font-family: "궁서체";
+  letter-spacing: 4px;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+#tf-none {
+  text-transform: none;
+}
+#tf-cpt {
+  text-transform: capitalize;
+}
+#tf-upper {
+  text-transform: uppercase;
+}
+#tf-lower {
+  text-transform: lowercase;
+}
+
+.t-shadow {
+  font-size: 3em;
+  font-weight: bold;
+  color: olive;
+  text-shadow: 5px -5px 6px saddlebrown;
+  font-variant: small-caps;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}

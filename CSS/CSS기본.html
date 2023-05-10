@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 기본 선택자</title>
+    <style>
+      /* 전체선택자
+              * {스타일 규칙} */
+      * {
+        margin: 0;
+      }
+      /* 타입선택자
+            태그명 {스타일 규칙} */
+      pre {
+        font-style: italic;
+        font-size: large;
+        font-family: "Courier New", Courier, monospace;
+        word-break: break-all;
+      }
+
+      /* 클래스선택자
+            클래스명 {스타일 규칙} */
+      .title {
+        font-size: 2em;
+      }
+      #title2 {
+        font-weight: bold;
+      }
+      pre.title2 {
+        font-size: 3em;
+      }
+      .title2 {
+        font-size: 2em;
+      }
+      span {
+        color: tomato;
+      }
+      h1 {
+        border: 2px dashed tomato;
+        padding: 20px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS 기본 선택자</h1>
+    <h3>전체선택자</h3>
+    <img src="../html/images/tangerines.jpg" alt="감귤쓰" />
+    <pre class="title">
+        Ooh ooh, ooh
+        You are not alone
+        </pre
+    >
+    <pre class="title2" id="title2">
+Ooh ooh
+For the last time I am sure
+        </pre
+    >
+    <pre>
+        <span>Hey</span>
+        I know what to feel when you decide, oh why?
+        </pre
+    >
+    <pre>
+        <span>Hey</span>
+        Where is the appeal when you don't try, try?
+        </pre
+    >
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS텍스트스타일</title>
+    <!-- 외부 스타일 -->
+    <link rel="stylesheet" href="03. CSS텍스트스타일.css" />
+    <!-- 내부 스타일 -->
+    <style></style>
+    <!-- 인라인 스타일 (태그 내에 삽입) 
+        우선 순위는 높아지지만 외부 파일로 분리하기 어려워서 추천하지 않음-->
+  </head>
+  <body>
+    <h1>CSS텍스트 스타일</h1>
+
+    <h2>1. font-family</h2>
+    텍스트의 글꼴을 지정할 때 사용
+    <p id="ff1">font-family TEST 1</p>
+    <p id="ff2">font-family TEST 2</p>
+    <p id="ff3">font-family TEST 3</p>
+
+    <p class="web-f">
+      웹폰트 사용
+      <br />
+      <a href="https://fonts.google.com">구글 웹폰트</a>
+      <br />style태그 안에 @import 한 후 사용 가능
+    </p>
+
+    <h2>2. font-size</h2>
+    텍스트의 크기를 변경할 때 사용
+    <ul>
+      <li id="f-size1">px 테스트</li>
+      <li id="f-size2">em 테스트</li>
+      <li id="f-size3">% 테스트</li>
+    </ul>
+
+    <h2>3. font-weight</h2>
+    텍스트의 크기를 변경할 때 사용
+    <ul>
+      <li id="f-weight1">400 테스트</li>
+      <li id="f-weight2">700 테스트</li>
+      <li id="f-weight3">bold 테스트</li>
+    </ul>
+
+    <h2>4. font-variant</h2>
+    <p id="f-var1">HELLO WORLD</p>
+    <p id="f-var2">Hello World</p>
+
+    <h2>5. font-style</h2>
+    텍스트의 스타일을 변경할 때 사용
+    <ul>
+      <li id="f-style1">font-style italic</li>
+      <li id="f-style2">font-style oblique</li>
+    </ul>
+
+    <h2>6. color</h2>
+    텍스트의 색상을 지정할 때 사용
+    <ul>
+      <li id="c-name">색상명으로 지정 ▶ cornflowerblue</li>
+      <li id="c-16">16진수 값으로 지정 ▶ #6495ed</li>
+      <li id="c-rgb">reg로 설정 ▶ rgb(100, 149, 237)</li>
+      <li id="c-rgba">rgba로 설정 ▶ rgba(100, 149, 237, 1)</li>
+      <li id="c-hsl">hsl로 설정 ▶ hsl(219, 79%, 66%)</li>
+      <li id="c-hsla">hsla로 설정 ▶ hsla(219, 79%, 66%, 100%)</li>
+    </ul>
+
+    <h2>7. text-decoration</h2>
+    텍스트에 줄을 그을 때 사용 (위, 아래, 중간)
+    <ul class="text-deco">
+      <li class="td-none">none</li>
+      <li id="td-under">underline</li>
+      <li id="td-over">overline</li>
+      <li id="td-thr">line-throuhgt</li>
+      <li><a class="td-none" href="">밑줄이 없는 a 링크</a></li>
+    </ul>
+
+    <h2>8. text-shadow</h2>
+    텍스트에 그림자 효과를 추가
+    <br />
+    text-shadow : 가로거리, 세로거리, 번짐정도, 색상 <br />
+    양수 : 글자의 오른쪽, 아래쪽 <br />
+    음수 : 글자의 왼쪽, 위쪽 <br />
+    번짐 정도 : 양수값 그림자가 모든 방향으로 퍼져 나가므로 크게 표현
+    <div id="bg">
+      <span id="ts">눕고 싶어요</span>
+    </div>
+
+    <h2>9. text-transform</h2>
+    영문 텍스트의 대소문자 변환
+    <ul>
+      <li>none ▶ <span id="tf-none">none</span></li>
+      <li>capitalize hello ▶ <span id="tf-cpt">capitalize hello</span></li>
+      <li>uppercase ▶ <span id="tf-upper">uppercase</span></li>
+      <li>LOWERCASE ▶ <span id="tf-lower">LOWERCASE</span></li>
+    </ul>
+
+    <!-- <s>Strikethrough : 취소선</s>
+    <br />
+    <del> 태그 : 대체되거나 삭제된 것 표시.</del>
+    <br />
+    <strike> 태그 : 더 이상 유효하지 않은 텍스트에 취소선 긋기.</strike> -->
+    <!-- <p class="t-shadow">Caphe Cozy</p> -->
+  </body>
+</html>
