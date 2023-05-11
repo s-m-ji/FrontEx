@@ -135,6 +135,39 @@ a.td-none:hover {
   text-transform: lowercase;
 }
 
+.lh {
+  border-bottom: 2px dashed #f80;
+}
+.lh1 {
+  line-height: 0.5;
+  text-align: left;
+}
+.lh2 {
+  line-height: 1.2;
+  text-align: right;
+}
+.lh3 {
+  line-height: 2.5;
+  text-align: center;
+}
+.lh4 {
+  line-height: 3.5;
+  text-align: justify;
+}
+
+table {
+  margin: 50px 0;
+  caption-side: bottom;
+  border-spacing: 20px;
+  background-color: saddlebrown;
+}
+
+th,
+td {
+  width: 20px;
+  text-indent: -999px;
+}
+
 .t-shadow {
   font-size: 3em;
   font-weight: bold;

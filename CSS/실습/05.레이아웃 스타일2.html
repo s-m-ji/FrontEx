@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>레이아웃 스타일2</title>
+    <style>
+      p {
+        width: 50%;
+        color: #fff;
+        padding: 20px;
+        box-shadow: 5px 5px 1px #aaa;
+      }
+      #static {
+        position: static;
+        background-color: orange;
+      }
+      #static::before {
+        display: inline-block;
+        content: "static";
+        background-color: #333;
+        padding: 5px;
+      }
+      #relative {
+        position: relative;
+        background-color: olivedrab;
+        left: 100px;
+        top: -100px;
+      }
+      #relative::before {
+        display: inline-block;
+        content: "relative";
+        background-color: #333;
+        padding: 5px;
+      }
+      #absolute {
+        position: absolute;
+        background-color: royalblue;
+        right: 150px;
+        top: 300px;
+      }
+      #absolute::before {
+        display: inline-block;
+        content: "absolute";
+        background-color: #333;
+        padding: 5px;
+      }
+      #fixed {
+        position: fixed;
+        width: 150px;
+        height: 50px;
+        background-color: #333;
+        right: 50px;
+        top: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 2em;
+      }
+      /* #fixed::before {
+        display: inline-block;
+        content: "fixed";
+        background-color: #333;
+        padding: 5px;
+      } */
+
+      .sum {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .circle {
+        width: 150px;
+        height: 150px;
+        box-shadow: none;
+        border-radius: 50%;
+        position: absolute;
+      }
+      #first {
+        background-color: rgba(255, 165, 0, 0.5);
+      }
+      #second {
+        background-color: rgba(106, 142, 35, 0.5);
+        left: 20%;
+        top: 35%;
+      }
+      #third {
+        background-color: rgba(65, 105, 225, 0.5);
+        left: -20%;
+        top: 35%;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>position</h2>
+    CSS를 이용해서 여러 요소를 적절하게 배치하는 것
+    <p id="static">
+      Lorem anim sit Lorem reprehenderit aute laboris veniam laboris id ex et
+      mollit mollit. Aliqua non voluptate pariatur id non reprehenderit quis
+      duis. Sint occaecat officia dolor ea mollit consectetur commodo anim
+      eiusmod mollit ea cupidatat et. Veniam quis dolore veniam aute velit
+      tempor. Ut qui Lorem nostrud irure eu mollit eu esse.
+    </p>
+    <p id="relative">
+      Mollit irure quis non enim sit commodo qui. Sit eu sunt nulla consectetur
+      reprehenderit ea eiusmod enim elit commodo irure ea magna. Consectetur
+      veniam excepteur aliqua consectetur nostrud deserunt. Sint et amet
+      deserunt ad dolore tempor labore amet elit. Labore non ullamco cupidatat
+      magna culpa exercitation laboris elit magna elit nulla sit. Ad
+      reprehenderit do proident laborum velit laborum duis veniam aliquip.
+      Laboris ut irure ea anim cillum do est velit.
+    </p>
+    <p id="absolute">
+      Voluptate Lorem consequat tempor consequat dolor cupidatat incididunt
+      laboris in duis esse Lorem labore. Irure velit Lorem dolor deserunt
+      nostrud enim in voluptate eiusmod ex. Aute ipsum velit laboris tempor eu
+      deserunt sint mollit laboris. Laborum duis labore tempor proident
+      cupidatat anim dolor ad amet ipsum consequat.
+    </p>
+    <p id="fixed">٩( *˙0˙*)۶</p>
+    <div class="sum">
+      <p id="first" class="circle"></p>
+      <p id="second" class="circle"></p>
+      <p id="third" class="circle"></p>
+    </div>
+  </body>
+</html>

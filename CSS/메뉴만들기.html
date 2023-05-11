@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메뉴 만들기</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      li {
+        display: inline-block;
+      }
+      /* a는 inline 요소이므로 width, height 속성을 갖지 못함
+        (콘텐츠의 영역만 가질 수 있음) */
+      a {
+        display: block;
+        color: #fff;
+        padding: 7.5px 15px;
+        text-align: center;
+        background-color: orange;
+        border-radius: 10px 10px 0 0;
+        box-shadow: 3px 0px 3px #aaa;
+        text-decoration: none;
+      }
+      a:hover {
+        background-color: orangered;
+      }
+      a:focus {
+        background-color: royalblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>메뉴 만들기</h1>
+    <ul>
+      <li>
+        <a href="">메뉴1</a>
+      </li>
+      <li>
+        <a href="">메뉴2</a>
+      </li>
+      <li>
+        <a href="">메뉴3</a>
+      </li>
+    </ul>
+  </body>
+</html>
