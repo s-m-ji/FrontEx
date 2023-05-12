@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메뉴만들기2</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      li {
+        display: inline-block;
+        width: 100px;
+        height: 50px;
+        padding: 5px;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 10px 10px 0 0;
+        border-radius: 25px 0 0 0;
+        background-color: cadetblue;
+      }
+      a {
+        display: inline-block;
+        width: 85%;
+        color: #efefef;
+        line-height: 40px;
+        text-decoration: none;
+        border: 3px inset #efefef;
+        border-radius: 10px 10px 0 0;
+        border-radius: 25px 0 0 0;
+        border-bottom: none;
+        border-top-color: darkturquoise;
+      }
+      li:hover {
+        background-color: #efefef;
+      }
+      li:hover a {
+        /* color: cadetblue; */
+        border-color: cadetblue;
+        border-bottom: 2px solid cadetblue;
+        background-color: rgba(95, 158, 160, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#">메뉴1</a></li>
+      <li><a href="#">메뉴2</a></li>
+      <li><a href="#">메뉴3</a></li>
+      <li><a href="#">메뉴4</a></li>
+    </ul>
+  </body>
+</html>

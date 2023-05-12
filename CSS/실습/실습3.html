@@ -21,6 +21,7 @@
       #cont {
         width: 640px;
         margin: 0 auto;
+        perspective: 1000px;
       }
       div.bg-black {
         background-color: #000;
@@ -49,19 +50,26 @@
         background-image: url(../../Ex/1HTML/images/tangerines.jpg);
         background-image: url(../../2CSS/images/apple-bg.jpg);
         background-size: 25%;
-        height: 500px;
+        /* height: 500px; */
+        height: 200px;
         position: relative;
         margin-bottom: 5px;
+        /* transform: rotateY(-25deg); */
+        /* transform: rotateX(30deg); */
+        transform-style: preserve-3d;
       }
       .txt {
         background-color: rgba(68, 67, 67, 0.8);
         padding: 10px 30px;
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        /* top: 50%;
+        transform: translateY(-50%); */
         width: 100%;
         box-sizing: border-box;
         text-align: center;
+        transform-origin: left top;
+        transform: rotateX(25deg);
+        border-radius: 0 0 30px 30px;
       }
       .txt h1 {
         color: #fff;

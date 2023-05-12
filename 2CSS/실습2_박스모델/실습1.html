@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>배경 스타일</title>
+    <style>
+      .container {
+        position: relative;
+        width: 600px;
+        height: 400px;
+        background: url(../images/apple-bg.jpg);
+      }
+      .content {
+        position: absolute;
+        width: 90%;
+        bottom: 40px;
+        left: 50%;
+        transform: translatex(-50%);
+        perspective: 300px;
+      }
+      h1 {
+        width: 150%;
+        padding: 30px;
+        text-align: center;
+        font-size: 1.5em;
+        box-sizing: border-box;
+        transform: rotateX(45deg);
+        transform: rotate3d(2.5, 2.2, -1.5, 45deg);
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      h1::before {
+        display: inline-block;
+        content: "?????";
+        margin-right: 10px;
+        border: 2px solid tomato;
+        border-right: 0;
+        border-left: 0;
+        line-height: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>하루 한 알의 사과는 의사를 멀리 한다</h1>
+      </div>
+    </div>
+  </body>
+</html>

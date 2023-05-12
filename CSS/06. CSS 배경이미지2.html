@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배경이미지2</title>
+    <style>
+      #container {
+        width: 1100px;
+        margin: 50px auto;
+      }
+      .box {
+        width: 300px;
+        height: 300px;
+        margin: 20px;
+        box-sizing: border-box;
+        float: left;
+        /* border: 10px groove darkseagreen; */
+        border: 20px groove rgb(153 122 82);
+        background: url(../2CSS/images/bg4\ copy.jpg) no-repeat center;
+        position: relative;
+      }
+
+      .box::before {
+        display: block;
+        content: "";
+        width: 15px;
+        height: 20px;
+        background-color: #453725;
+        border-radius: 5px;
+        position: absolute;
+        left: 50%;
+        top: -30px;
+      }
+
+      #bg6::before {
+        width: 30px;
+        height: 40px;
+        top: -60px;
+      }
+
+      #bg1 {
+        background-size: auto;
+      }
+      #bg2 {
+        background-size: 200px;
+      }
+      #bg3 {
+        background-size: contain;
+      }
+      #bg4 {
+        background-size: cover;
+      }
+      #bg5 {
+        background-size: 100% 200%;
+      }
+      #bg6 {
+        clear: both;
+        width: 900px;
+        height: 450px;
+        background-size: cover;
+        border-width: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="box" id="bg1"></div>
+      <div class="box" id="bg2"></div>
+      <div class="box" id="bg3"></div>
+      <div class="box" id="bg4"></div>
+      <div class="box" id="bg5"></div>
+      <div class="box" id="bg6"></div>
+    </div>
+  </body>
+</html>
