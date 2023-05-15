@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>속성 선택자</title>
+    <style>
+      ul {
+        list-style: square;
+        /* display: flex; */
+        /* color: steelblue; */
+      }
+      li {
+        margin: 0 20px;
+      }
+      li a {
+        line-height: 30px;
+        font-size: 14px;
+        color: steelblue;
+        text-decoration: none;
+        padding: 5px 30px;
+      }
+
+      li a:hover {
+        text-decoration: underline;
+      }
+
+      li a:hover:after {
+        content: " 다운로드";
+      }
+
+      li a[href$="hwp"] {
+        background: url(images/hwp_icon.gif) no-repeat right center;
+      }
+
+      li a[href$="xls"] {
+        background: url(images/excel_icon.gif) no-repeat right center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>회사 소개 파일 다운 받기</h3>
+    <ul>
+      <li><a href="intro.hwp">hwp 파일</a></li>
+      <li><a href="intro.xls">엑셀 파일</a></li>
+    </ul>
+  </body>
+</html>

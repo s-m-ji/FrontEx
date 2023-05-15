@@ -1,0 +1,60 @@
+section h1 {
+  background-color: orange;
+  color: #fff;
+}
+section > p {
+  background-color: orangered;
+  color: #fff;
+}
+
+#div-test1 + div {
+  background-color: steelblue;
+  color: #fff;
+  font-size: 2em;
+}
+
+#div-test1 ~ div {
+  /* background-color: steelblue; */
+  /* color: #fff; */
+}
+
+section div p + p {
+  background-color: gray;
+}
+
+#room + p {
+  color: #fff;
+}
+
+/* 속성 선택자 */
+
+/* div 중에 class 속성에 div가 어디든 포함되는 태그 (class*="div")처럼 div가 들어간 모두 */
+div[class*="div"] {
+  background-color: olivedrab;
+}
+
+/* div 중에 class 속성이 V으로 끝나는 태그 (class*="diV")*/
+div[class$="V"] {
+  background-color: steelblue;
+}
+
+/* div 중에 class 속성이 D로 시작되는 태그 (class="D어쩌고") */
+div[class^="D"] {
+  background-color: orangered;
+}
+
+/* div 중에 class 속성에 ko가 포함된 태그 (class="ko div") */
+div[class~="ko"] {
+  background-color: olivedrab;
+}
+
+/* div 중에 class 속성에 div가 포함된 태그 (class="div" 또는 class="div-어쩌고") */
+div[class|="div"] {
+  background-color: orange;
+  color: #fff;
+}
+
+/* div 중 id 속성 값이 name1과 일치하는 태그 */
+div[id="name5"] {
+  background-color: gray;
+}

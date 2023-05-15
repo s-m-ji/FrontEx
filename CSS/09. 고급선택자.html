@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="09. 고급선택자.css" />
+    <title>고급선택자2</title>
+  </head>
+  <body>
+    <h4>4. 반응선택자</h4>
+    <p>사용자의 움직임에 따라 달라지는 선택자</p>
+    <pre>
+        1. 사용자가 클릭하는 요소에 스타일 적용
+            선택자:active {
+                스타일 속성 : 값;
+                . . .
+            } 
+        2. 사용자가 마우스를 올려놓는 요소에 스타일 적용
+            선택자:hover  {
+                스타일 속성 : 값;
+                . . .
+            } 
+    </pre>
+    <div class="test" id="a-test"></div>
+    <div class="test" id="h-test"></div>
+
+    <h2>5. 상태 선택자</h2>
+    <p>입력 양식의 선택에 따라 선택되는 선택자</p>
+    <pre>
+        1. 체크된 상태의 태그
+            선택자:checked {
+                스타일 속성 : 값;
+                . . .
+            } 
+
+    </pre>
+    <form action="">
+      <input type="checkbox" name="fruits" id="apple" /><label for="apple"
+        >apple</label
+      >
+      <br /><input type="checkbox" name="fruits" id="banana" /><label
+        for="banana"
+        >banana</label
+      ><br /><input type="checkbox" name="fruits" id="peach" /><label
+        for="peach"
+        >peach</label
+      ><br /><label for="txt">txt</label>
+      <input type="text" name="fruits" id="txt" />
+    </form>
+    <br /><br />
+
+    <pre>
+        2. 초점이 맞춰진 태그 스타일 변경
+            선택자:focus {
+                스타일 속성 : 값;
+                . . .
+            } 
+    </pre>
+    <form action="">
+      <input
+        type="text"
+        name=""
+        id="userId"
+        placeholder="아이디를 입력"
+      /><label for="usertId">아이디</label><br /><input
+        type="password"
+        name=""
+        id="userPwd"
+        placeholder="비밀번호를 입력"
+      /><label for="userPwd">비밀번호</label>
+    </form>
+    <br /><br />
+
+    <pre>
+        3. 사용 가능한 태그 스타일 변경
+            선택자:enabled {
+                스타일 속성 : 값;
+                . . .
+            }
+
+        4. 사용 불가능한 태그 스타일 변경
+            선택자:disabled {
+                스타일 속성 : 값;
+                . . .
+            } 
+    </pre>
+    <h3>당신의 연령대는?</h3>
+    <select name="" id="">
+      <option value="" disabled>10대</option>
+      <option value="">20대</option>
+      <option value="">30대</option>
+      <option value="">40대</option>
+      <option value="">50대</option>
+      <option value="">60대</option>
+    </select>
+    <button>버튼1</button>
+    <button disabled>버튼2</button>
+    <br /><br />
+
+    <h2>6. 일반 구조 선택자</h2>
+    <p>특정한 위치에 있는 태그를 선택(위치로 구분)</p>
+    <div id="test2">
+      <p>테스트1</p>
+      <p>테스트2</p>
+      <p>테스트3</p>
+      <p>테스트4</p>
+      <pre>테스트5</pre>
+    </div>
+    <br /><br />
+
+    <h2>7. 형제 구조 선택자</h2>
+    <p>특정한 위치에 있는 태그를 선택(위치로 구분)</p>
+    <div id="test3">
+      <p>테스트1</p>
+      <p>테스트2</p>
+      <p>테스트3</p>
+      <p>테스트4</p>
+      <pre>테스트5</pre>
+    </div>
+    <br /><br />
+
+    <h2>8. 부정 선택자</h2>
+    <p>요소를 제외하고 선택</p>
+    <div id="test4">
+      <pre>테스트0</pre>
+      <p>테스트1</p>
+      <p>테스트2</p>
+      <pre>테스트3</pre>
+      <p class="p">테스트4</p>
+      <p class="p">테스트5</p>
+      <pre class="p">테스트6</pre>
+      <p class="p">테스트7</p>
+    </div>
+  </body>
+</html>

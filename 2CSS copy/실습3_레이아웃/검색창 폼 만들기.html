@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>검색창 폼 만들기</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .search_wrap {
+        width: 400px;
+        margin: 100px auto;
+        height: 40px;
+        text-align: center;
+      }
+      h2 {
+        margin-bottom: 50px;
+      }
+      form > div {
+        float: left;
+      }
+      #search_txt {
+        width: 300px;
+        height: 40px;
+      }
+      .search_wrap input {
+        border-color: steelblue;
+        padding: 10px 40px;
+      }
+
+      #search_btn {
+        height: 40px;
+        width: 40px;
+      }
+
+      .search_wrap input[type="submit"] {
+        border-color: steelblue;
+        padding: 9px 20px;
+        color: steelblue;
+        background: url(images/search_icon.jpg) no-repeat center;
+        background-size: 75%;
+        background-color: rgba(70, 131, 180, 0.5);
+        text-indent: -999px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search_wrap">
+      <h2>검색창 폼 만들기</h2>
+      <form action="">
+        <div id="search_txt">
+          <input type="search" name="search" id="search" />
+        </div>
+        <div id="search_btn">
+          <input type="submit" value="검색" />
+          <!-- <button></button> -->
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        p{
+            width: 500px;
+            height: 300px;
+            /* #000 검정 #111 #222 #333 ...
+               #999 16진수 이므로 a(10)~f(16)
+               #aaa #bbb #ccc .. 
+               #fff 흰색  */
+            background-color: #eee; 
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+        #static{
+            /* 기본값 */
+            position: static;
+        }
+        #relative-1{
+            position: relative;
+        }
+        #relative-2{
+            position: relative;
+            /* 왼쪽에서 100px 떨어지게 */
+            left:100px;
+            /* 위에서 -50px 떨어지게(음수 위로 이동) */
+            top:-50px;
+        }
+
+        #fixed{
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            background-color: #222;
+            /* 오른쪽에서 30px 떨어지게 */
+            right: 30px;
+            /* 위에서 30px 떨어지게 */
+            top: 30px;
+        }
+
+        #outer{
+            position: relative;
+        }
+        #first{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+
+        }
+
+        #second{
+            width: 200px;
+            height: 200px;
+            background-color: seagreen;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        #third{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>포지셔닝</h2>
+    CSS를 이용해서 여러 요소를 적절하게 배치하는 것
+    <div id='outer'>
+        <p id='first'></p>
+        <p id='second'></p>
+        <p id='third'></p>
+    </div>
+    <p id='static'>
+        Mollit et tempor labore incididunt elit exercitation sint anim duis. Culpa aute reprehenderit nulla sit dolore magna esse sunt. Nostrud voluptate elit quis id sint eiusmod labore ipsum esse. Tempor commodo magna occaecat consequat pariatur amet aliquip incididunt amet quis et ipsum do. Mollit pariatur minim in mollit nulla nostrud eiusmod do aliquip magna. Reprehenderit amet voluptate id anim minim velit cillum do laboris ad aute eu labore fugiat.
+
+Deserunt anim fugiat minim eiusmod esse velit labore incididunt ea amet elit dolor aliquip laborum. Velit ipsum tempor cupidatat adipisicing fugiat nostrud voluptate ut sunt. Nulla ullamco nisi commodo ad voluptate. Proident Lorem occaecat veniam laborum ullamco consectetur do. Consectetur nisi aute ipsum nulla reprehenderit sunt.
+
+Nulla ex reprehenderit esse excepteur laboris eu laboris incididunt proident. Aliqua consequat ad velit tempor sint Lorem pariatur anim cupidatat sint. Adipisicing ut sint eiusmod reprehenderit veniam laboris proident Lorem cupidatat in nostrud nisi. Lorem esse consequat reprehenderit consectetur ex adipisicing ex laborum.
+    </p>
+
+    <p>Nulla in amet aute et exercitation exercitation id eiusmod officia eiusmod. Lorem enim incididunt cupidatat elit nulla dolore. Velit esse id et cillum minim tempor sit voluptate esse irure.
+
+Culpa sit aute est dolore qui duis. Ipsum ad ut laborum incididunt quis cillum in consectetur anim ipsum irure minim voluptate. Nulla laborum labore est culpa ut do enim qui eiusmod est duis. Velit excepteur magna irure ea consequat irure commodo tempor officia qui.
+    </p>
+
+    <p>
+        Incididunt non ad dolore do non velit enim est cupidatat.
+    </p>
+
+    <p>
+        Reprehenderit cillum commodo voluptate excepteur esse aliqua eiusmod quis ut exercitation non magna exercitation.
+    </p>
+
+
+    <p id='relative-1'>
+        Exercitation ipsum id aliqua ad. Duis nulla officia anim consectetur do commodo fugiat. Cupidatat officia nostrud consectetur ut pariatur fugiat.
+
+In culpa proident sit sit eu deserunt in proident anim labore culpa aute. Id reprehenderit culpa id ullamco ut esse do quis amet pariatur. Magna commodo eu sint exercitation non dolor officia quis esse adipisicing qui elit commodo duis. Nulla excepteur ad ex cillum exercitation incididunt minim eiusmod ea anim. Consequat excepteur id eu consequat occaecat amet Lorem dolore veniam consectetur. Mollit enim Lorem nulla aliqua dolor ex ipsum amet tempor.
+
+Voluptate veniam amet tempor mollit eiusmod ut. Officia non cupidatat non dolor velit. Lorem ut consectetur deserunt nulla. Irure id ea irure id est quis incididunt duis laborum do. Deserunt laborum ullamco aliqua ex. Enim id non enim minim consectetur cillum nisi sint veniam voluptate cillum fugiat est. In ex Lorem ea nisi fugiat esse officia irure sit sit excepteur.
+    </p>
+    <p id='relative-2'>
+        Id irure ipsum sunt adipisicing eu anim in veniam velit veniam reprehenderit officia ex. Tempor adipisicing excepteur ea et Lorem aliquip sint enim deserunt sunt eu. Nostrud cillum consectetur ex aliquip cillum est. Anim fugiat aliqua labore proident non id adipisicing laborum anim mollit duis exercitation aute.
+
+Mollit excepteur deserunt incididunt mollit. Eiusmod ad amet cillum velit fugiat. Dolor enim eu sint esse deserunt cupidatat aute. Incididunt duis Lorem consequat culpa ullamco esse id aliqua dolore ad. Magna exercitation quis est labore aliqua non ullamco tempor ut ipsum tempor. Mollit incididunt ullamco ut id in nostrud dolor. Irure est incididunt nulla incididunt et fugiat quis qui id veniam.
+
+Eu consequat sint deserunt sit nostrud ullamco et incididunt occaecat cillum nostrud nisi nisi dolor. Commodo mollit deserunt consectetur pariatur dolore laborum ea est eiusmod magna elit reprehenderit nulla ut. Non mollit ad cupidatat do consectetur commodo qui est eiusmod proident officia in irure fugiat. Id eu sit cupidatat voluptate dolore sit aute eu tempor. Ex fugiat labore enim voluptate fugiat elit voluptate.
+    </p>
+
+    <p id='fixed'>
+
+    </p>
+</body>
+</html>
