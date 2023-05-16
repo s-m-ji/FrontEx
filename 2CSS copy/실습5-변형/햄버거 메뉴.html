@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>햄버거 메뉴</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+        box-sizing: border-box;
+        color: #222;
+      }
+      div.menuIcon {
+        width: 100px;
+        height: 100px;
+        background-color: #333;
+        margin: 50px;
+        /* border-radius: 15px; */
+        position: relative;
+        z-index: 100;
+      }
+      p {
+        width: 100%;
+        height: 15px;
+        background: linear-gradient(90deg, #333, #ccc, #333);
+        /* background-color: rosybrown; */
+        /* margin-bottom: 5px; */
+        border-radius: 15px;
+        position: absolute;
+        transition: all 0.5s;
+      }
+      div.menuIcon p:nth-child(1) {
+        top: 20px;
+      }
+      div.menuIcon p:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      div.menuIcon p:nth-child(3) {
+        bottom: 20px;
+        left: calc(100%-20px);
+      }
+
+      div.menuIcon:hover p:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate3d(1.5, 1.5, 1.5, 360deg);
+      }
+      div.menuIcon:hover p:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%) rotate(360deg);
+      }
+      div.menuIcon:hover p:nth-child(3) {
+        top: 50%;
+        transform: translateY(-50%) rotate3d(1.5, 1.5, 1.5, -360deg);
+      }
+
+      header {
+        /* position: relative; */
+        z-index: 10;
+      }
+      header:hover nav {
+        top: 150px;
+      }
+
+      nav {
+        width: 300px;
+        height: 600px;
+        position: absolute;
+        left: 50px;
+        top: -300px;
+        transition: all 1s;
+      }
+
+      nav > ul {
+        padding-left: 10px;
+        background-color: #33333330;
+        /* border-radius: 15px; */
+        border: 1px solid #33333330;
+        position: relative;
+        z-index: -1;
+      }
+
+      nav > ul > li {
+        width: 100%;
+        height: 50px;
+      }
+
+      nav > ul > li > a {
+        display: block;
+        line-height: 50px;
+        border-left: 20px double #fff;
+        padding-left: 20px;
+        font-size: large;
+        border-bottom: 1px solid #33333330;
+      }
+      nav > ul > li > a:hover {
+        background-color: #33333130;
+      }
+
+      header {
+        width: 100%;
+        height: 100px;
+        background-color: #555;
+        z-index: 999;
+      }
+
+      .block {
+        width: 100%;
+        height: 50px;
+        background-color: #fff;
+        position: absolute;
+        z-index: 999;
+        top: -50px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="menuIcon">
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+      <div class="title"></div>
+      <div class="inform"></div>
+      <nav>
+        <ul>
+          <li><a href="">메뉴1</a></li>
+          <li><a href="">메뉴2</a></li>
+          <li><a href="">메뉴3</a></li>
+          <li><a href="">메뉴4</a></li>
+          <li><a href="">메뉴5</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="block"></div>
+  </body>
+</html>

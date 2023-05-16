@@ -1,0 +1,56 @@
+h1,
+h3,
+p {
+  position: relative;
+  left: 100px;
+}
+
+.trans-test {
+  width: 250px;
+  height: 200px;
+  position: relative;
+  left: 100px;
+
+  transition: all 1s;
+  /* 기본값
+        all
+        ease : 처음에는 천천히, 점점 빨라지다가 끝날 때 천천히
+  */
+}
+
+#trans1:hover {
+  transform: translateX(-100px);
+}
+
+#trans2:hover {
+  transform: translateY(100px);
+}
+
+#trans3:hover {
+  transform: translate(100px, -100px);
+}
+
+#trans4:hover {
+  transform: scaleX(1.5);
+}
+
+#trans5:hover {
+  transform: scaleY(0.5);
+}
+
+#trans6:hover {
+  transform: scale(10);
+}
+
+#trans7 {
+  transition: all 10s;
+}
+#trans7:hover {
+  transform: rotate(4500deg);
+}
+
+#trans8:hover {
+  transform-origin: 100px -100px;
+  transform: rotateZ(-90deg);
+  transform: rotate3d(2.5, 1.2, -1.5, 90deg);
+}

@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #222;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+}
+
+#wrap {
+  width: 1280px;
+  margin: 0 auto;
+}
+.border {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px;
+}
+
+header {
+}
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.search-box form {
+  height: auto;
+}
+
+.search-box input {
+  width: 80%;
+  height: 35px;
+}
+.search-box input[type="search"] {
+  width: 20%;
+  background: url(../실습6-웹문서\ 만들기2/image/search.png) no-repeat center;
+  background-size: 20px;
+}
+
+.menu {
+  width: 100%;
+}
+.menu li {
+  display: inline-block;
+  width: 19%;
+  height: 30px;
+  line-height: 30px;
+}
+.menu li a {
+  display: block;
+  text-align: center;
+  font-size: large;
+}
+
+main {
+  width: 100%;
+  display: flex;
+}
+
+.left-cont {
+  width: 75%;
+}
+
+.left-aside > * {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.l-top {
+  margin-top: 0;
+  padding: 0;
+}
+
+.l-mid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.l-mid ol {
+  width: 15%;
+}
+.l-mid ol li {
+  display: inline-block;
+  margin: 0 1%;
+  font-size: smaller;
+}
+.l-bot {
+  padding: 0;
+}
+
+.right-cont {
+  width: 25%;
+}
+
+.r-top {
+  margin: 0 10px 10px 0;
+}
+
+.r-bot {
+  margin: 0 10px 10px 0;
+  padding: 0;
+}
+
+input {
+  border-radius: 0;
+  border: 1px solid #999;
+}
+#login_wrap {
+  /* width: 300px; */
+  width: 100%;
+}
+form {
+  height: 100px;
+}
+#login_form_input {
+  float: left;
+  width: 65%;
+  height: 100%;
+}
+#login_form_input input {
+  width: 100%;
+  height: 50%;
+  padding: 15px 15px 15px 5px;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+#login_form_btn input[type="submit"]:focus-visible,
+#login_form_btn input[type="submit"] :hover {
+  border: 1px solid #ff000045;
+  outline: none;
+  background-color: #ff000045;
+}
+#login_form_btn {
+  float: right;
+  width: 35%;
+  height: 100%;
+}
+#login_form_btn input {
+  width: 100%;
+  height: 100%;
+  /* font-size: large; */
+  /* font-weight: bold; */
+  /* background-color: #ddd; */
+}
+
+#login_link {
+  clear: both;
+  padding: 10px;
+  text-align: center;
+}
+#login_link a {
+  color: #222;
+  font-size: small;
+  border: 1px solid #ff000000;
+}
+#login_link a::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 12.5px;
+  background-color: #666;
+  margin: 0 5px 0 10px;
+  transform: translateY(1.52px);
+}
+#login_link a:last-child::after {
+  display: none;
+}
+
+#login_link a:focus,
+#login_link a:hover {
+  outline: 0;
+  border-top: 1px solid #ff000045;
+  border-bottom: 1px solid #ff000045;
+  background-color: #ff000045;
+}
+
+footer.border {
+  margin-top: 0;
+  font-size: small;
+}
+
+footer .s-map li {
+  display: inline-block;
+  padding: 0 20px;
+  border-right: 2px solid #333;
+}
+
+footer .s-map li:first-child {
+  padding-left: 0;
+}
+footer .s-map li:last-child {
+  border-right: 0;
+}
+footer .s-map li a {
+  display: block;
+  font-size: medium;
+  font-weight: bold;
+}
+
+footer .add {
+  margin: 30px 0;
+}
+
+footer p {
+  text-align: center;
+}

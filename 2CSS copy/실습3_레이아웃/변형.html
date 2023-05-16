@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="변형.css" />
+    <style>
+      div {
+        display: inline-block;
+      }
+      .box {
+        margin: 50px 100px;
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        border: 20px dashed #fff;
+        transition-property: width, height;
+        transition-duration: 3s, 1s;
+      }
+      .box:hover {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+
+      .box2 {
+        width: 20px;
+        height: 20px;
+        margin: 50px;
+      }
+      .bg-tr {
+        background-color: orange;
+        border: 50px dotted #fff;
+        transition: 3s ease all;
+        /* transition-timing-function
+        ease : 천천히 시작해서 빨라지다가 천천히 끝남
+        linear : 시작부터 끝까지 같은 속도
+        ease-in : 느리게 시작
+        ease-out : 느리게 끝남
+        ease-in-out : 느리게 시작하고 느리게 끝남 
+        */
+        /* transition-delay: 1s; */
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition-timing-function: ease-in;
+      }
+      .bg-tr:hover {
+        background-color: olivedrab;
+      }
+
+      .border-tr {
+        width: 50px;
+        height: 50px;
+        background-color: orange;
+        border: 50px double #fff;
+        transition: 3s ease-in-out all;
+      }
+
+      .border-tr:hover {
+        border-color: olivedrab;
+      }
+
+      .rotate {
+        margin-left: 150px;
+        background-color: olivedrab;
+        border: 50px groove #fff;
+        transition: all 6s ease-out;
+      }
+
+      .rotate:hover {
+        width: 300px;
+        height: 300px;
+        border-color: olivedrab;
+        transform: rotate3d(2.5, 4.5, 1.2, 360deg);
+      }
+    </style>
+    <title>변형</title>
+  </head>
+  <body>
+    <h1>Transition(트랜지션)</h1>
+    <p>웹 요소의 스타일 속성이 조금씩 자연스럽게 바뀌도록 함</p>
+    <div class="box"></div>
+    <div class="box2 bg-tr"></div>
+    <div class="box2 border-tr"></div>
+    <div class="box2 rotate"></div>
+    <h1>변형</h1>
+    <h3>좌우로 움직이기</h3>
+    <img
+      class="trans-test"
+      id="trans1"
+      src="../실습5-변형/images/prod1.jpg"
+      alt=""
+    />
+    <h3>상하로 움직이기</h3>
+    <img
+      class="trans-test"
+      id="trans2"
+      src="../실습5-변형/images/prod2.jpg"
+      alt=""
+    />
+    <h3>대각선으로 움직이기</h3>
+    <img
+      class="trans-test"
+      id="trans3"
+      src="../실습5-변형/images/prod1.jpg"
+      alt=""
+    />
+    <h3>가로로 확대/축소</h3>
+    <img
+      class="trans-test"
+      id="trans4"
+      src="../실습5-변형/images/prod2.jpg"
+      alt=""
+    />
+    <h3>세로로 확대/축소</h3>
+    <img
+      class="trans-test"
+      id="trans5"
+      src="../실습5-변형/images/prod1.jpg"
+      alt=""
+    />
+    <h3>전체 확대/축소</h3>
+    <img
+      class="trans-test"
+      id="trans6"
+      src="../실습5-변형/images/prod2.jpg"
+      alt=""
+    />
+    <h3>돌려돌려</h3>
+    <img
+      class="trans-test"
+      id="trans7"
+      src="../실습5-변형/images/prod1.jpg"
+      alt=""
+    />
+    <h3>돌려돌려돌려돌려</h3>
+    <img
+      class="trans-test"
+      id="trans8"
+      src="../실습5-변형/images/prod2.jpg"
+      alt=""
+    />
+  </body>
+</html>

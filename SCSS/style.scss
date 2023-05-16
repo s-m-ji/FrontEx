@@ -1,0 +1,94 @@
+$c-steelblue: steelblue;
+$c-fff: #fff;
+$c-ddd: #ddd;
+$c-333: #333;
+$c_333: #555; // 변수 선언 시 -, _ 동일하게 취급하기 때문에 $c-333값이 #555으로 갱신되었음
+$c-e62837: #e62837;
+$ts: 1s all;
+// $fs-it: italic;
+
+$position: top;
+$name: SilicaGel;
+$height: 300px;
+
+$size: 100;
+
+@mixin font(
+  // $color: #000,
+  $style: normal,
+  $weight: normal,
+  $size: 1em,
+  $family: sans-serif
+) {
+  font: {
+    // color: $color;
+    style: $style;
+    weight: $weight;
+    size: $size;
+    family: $family;
+  }
+}
+
+.FlexBox {
+  display: flex;
+  align-items: center;
+  text-align-last: justify;
+}
+
+header {
+  width: $size;
+}
+
+#SilicaGelBox {
+  text-align: center;
+  position: relative;
+  #{$position}: 100px;
+  background: url(images/#{$name}.jpg) top left / contain;
+  // 백그라운드 속성을 한번에 다 적을 때 사이즈는 position요소와 함께, / 이후에 적어야한다.
+  // background-image: center/contain url("<images/#{$name}.jpg>");
+  // background-size: contain;
+  height: calc(100vh-#{$height});
+  height: #{$height};
+
+  &__title {
+    background-color: $c-333;
+    color: $c-ddd;
+    // $c-ddd: orange !default;
+    color: orange;
+    // transition: $ts;
+    // $ts: 1s all !global;
+    transition: $ts;
+    width: $size;
+
+    span:first-of-type {
+      color: rgba(255, 166, 0, 0.2);
+    }
+    span:last-of-type {
+      color: rgba(255, 166, 0, 1);
+    }
+
+    &:hover {
+      color: $c-e62837;
+    }
+  }
+
+  &__txt {
+    // $fs-it: italic;
+    // font-style: fs-it;
+    $font-values: italic, bold, 1em, "나눔고딕";
+    @include font($font-values...);
+    color: $c-333;
+    transition: $ts;
+    height: #{$size} * 1em;
+    background-color: #55555530;
+
+    &:hover {
+      $font-values: bold;
+      @include font($font-values...);
+    }
+
+    @media screen and (max-width: 768px) {
+      font-style: normal;
+    }
+  }
+}

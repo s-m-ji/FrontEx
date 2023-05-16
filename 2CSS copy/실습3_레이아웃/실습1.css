@@ -1,0 +1,182 @@
+/* ==================== 초기화 ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  color: #222;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+}
+
+/* ==================== 최상위 박스 ==================== */
+.wrap {
+  width: 715px;
+  width: 1280px;
+  width: 85%;
+  margin: 50px auto;
+}
+
+/* ==================== 헤더 ==================== */
+header {
+  margin-bottom: 10px;
+}
+header > * {
+  width: 100%;
+  display: flex;
+}
+header div .h-logo {
+  width: 20%;
+  height: 100px;
+  background: url(images/logo.jpg) center no-repeat;
+}
+header div .m-logo {
+  width: 60%;
+  height: 100px;
+  background: url(images/mainlogo.jpg) center no-repeat;
+  background-size: contain;
+}
+header div img {
+  display: none;
+}
+.menu {
+  display: flex;
+  width: 100%;
+  background-color: #64ad15;
+}
+.menu li {
+  width: 25%;
+}
+.menu li a {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  color: #eee;
+  text-align: center;
+  border: 1px solid #0000ff00;
+}
+
+/* ==================== 메인 ==================== */
+.main {
+  width: 100%;
+  display: flex;
+}
+
+.left-aside {
+  width: 15%;
+}
+
+.main-cont {
+  width: 60%;
+  padding: 1%;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.list li {
+  width: 47.5%;
+}
+.list li p {
+  text-align: center;
+}
+
+.right-aside {
+  width: 25%;
+}
+.r-a-login {
+  margin-bottom: 50px;
+}
+input {
+  /* border-radius: 0; */
+  border: 1px solid #bcbcbc;
+}
+#login_wrap {
+  height: 75px;
+}
+form {
+  height: 100%;
+}
+#login_form_input {
+  float: left;
+  width: 65%;
+  height: 100%;
+}
+#login_form_input input {
+  width: 100%;
+  height: 50%;
+  padding: 2%;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+#login_form_btn input[type="submit"]:focus-visible,
+#login_form_btn input[type="submit"] :hover {
+  border: 1px solid #00ff0045;
+  outline: none;
+  background: linear-gradient(to bottom, #eee, #00ff0045);
+}
+#login_form_btn {
+  float: right;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#login_form_btn input {
+  width: 80%;
+  height: 80%;
+  font-size: large;
+  /* font-weight: bold; */
+  /* background-color: #ddd; */
+  background: linear-gradient(to bottom, #eee, #ccc);
+}
+
+#login_link {
+  clear: both;
+  padding: 1%;
+  text-align: center;
+}
+#login_link a {
+  color: #222;
+  font-size: small;
+  border: 1px solid #0000ff00;
+}
+#login_link a::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 12.5px;
+  background-color: #666;
+  margin: 0 12px 0 20px;
+  transform: translateY(1.52px);
+}
+#login_link a:last-child::after {
+  display: none;
+}
+
+.menu li a:focus,
+.menu li a:hover,
+#login_link a:focus,
+#login_link a:hover {
+  outline: 0;
+  border-top: 1px solid #00ff0045;
+  border-bottom: 1px solid #00ff0045;
+  background-color: #00ff0045;
+}
+
+/* ==================== 푸터 ==================== */
+
+footer {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer p {
+  text-align: center;
+}

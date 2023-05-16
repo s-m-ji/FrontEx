@@ -4,21 +4,93 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="실습1.css" />
     <title>웹문서 구조 만들기</title>
+    <style></style>
   </head>
   <body>
     <div class="wrap">
       <header>
-        <div></div>
-        <nav></nav>
+        <div class="logo">
+          <img src="images/logo.jpg" alt="" class="h-logo" />
+          <div class="h-logo"></div>
+          <img src="images/mainlogo.jpg" alt="" class="m-logo" />
+          <div class="m-logo"></div>
+        </div>
+        <nav>
+          <ul class="menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">Profile</a></li>
+            <li><a href="">Board</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </nav>
       </header>
-
       <div class="main">
-        <aside></aside>
-        <main></main>
-        <aside></aside>
+        <aside class="left-aside">
+          <img src="images/left_img.jpg" alt="" />
+        </aside>
+        <main class="main-cont">
+          <ol class="list">
+            <li>
+              <img src="images/main_img1.jpg" alt="" />
+              <p>나무를 심는 사람들</p>
+            </li>
+            <li>
+              <img src="images/main_img2.jpg" alt="" />
+              <p>아이들에게 녹색미래를..</p>
+            </li>
+            <li>
+              <img src="images/main_img3.jpg" alt="" />
+              <p>설악산을 살리는 길</p>
+            </li>
+            <li>
+              <img src="images/main_img4.jpg" alt="" />
+              <p>사라지는 북극곰들</p>
+            </li>
+          </ol>
+        </main>
+        <aside class="right-aside">
+          <div class="r-a-login">
+            <div id="login_wrap">
+              <form action="" method="">
+                <div id="login_form_input">
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="아이디를 입력하세요"
+                    autofocus
+                  />
+                  <input
+                    type="password"
+                    name=""
+                    id=""
+                    placeholder="비밀번호를 입력하세요"
+                    autofocus
+                  />
+                </div>
+                <div id="login_form_btn">
+                  <input type="submit" value="로그인" />
+                </div>
+              </form>
+              <div id="login_link">
+                <a href="">회원가입</a>
+                <a href="">ID/PW 찾기</a>
+              </div>
+            </div>
+          </div>
+          <div class="r-a-cont">
+            <img src="images/right_img.jpg" alt="" />
+          </div>
+          <div class="r-a-board">
+            <img src="images/me_chat.jpg" alt="" />
+          </div>
+        </aside>
       </div>
-      <footer></footer>
+      <footer>
+        <p>ⓒExample from JAVA Web Developer Junior</p>
+      </footer>
     </div>
   </body>
 </html>
