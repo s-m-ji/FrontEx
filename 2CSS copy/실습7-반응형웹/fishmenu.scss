@@ -1,0 +1,111 @@
+$bs: 0px 10px 10px #999;
+
+@font-face {
+  font-family: "TTCrownMychewR";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/TTCrownMychewR.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: "TTCrownMychewR";
+  margin: 0;
+  padding: 0;
+  color: #000;
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  font-size: 2em;
+}
+
+i {
+  font-size: 4em;
+  color: slateblue;
+}
+p {
+  font-size: 3em;
+  text-align-last: justify;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  i {
+    font-size: 1.5em;
+    color: rgba(255, 166, 0, 0.35);
+  }
+}
+.box {
+  display: none;
+}
+
+.wrap {
+  box-shadow: $bs;
+
+  header {
+    padding: 10px 30px;
+    position: relative;
+
+    .h-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100px;
+    }
+
+    nav {
+      position: absolute;
+      top: 100%;
+      left: -100%;
+      width: 50%;
+      background-color: #ccc;
+      box-shadow: $bs;
+      transition: all 1s;
+
+      .menu {
+        li {
+          a {
+            display: block;
+            padding: 30px 60px;
+            text-transform: capitalize;
+          }
+          & > :hover {
+            background-color: #0000001f;
+          }
+          .sub {
+            height: 0;
+            transition: all 1s;
+            li {
+              border-bottom: 1px dashed #000;
+              &:last-child {
+                border: none;
+              }
+            }
+            a {
+              padding: 30px 60px;
+            }
+          }
+          &:hover .sub {
+            height: max-content;
+            height: 280px;
+          }
+        }
+
+        > li {
+          overflow: hidden;
+          border-bottom: 1px solid #000;
+
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+    }
+
+    .fa-bars:hover + nav,
+    nav:hover {
+      left: 0px;
+    }
+  }
+}

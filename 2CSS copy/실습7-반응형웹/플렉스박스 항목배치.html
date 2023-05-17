@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/bc0f5040fb.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>플렉스박스 항목배치</title>
+    <style>
+      .container {
+        display: flex;
+        background-color: #ccc;
+        border: 5px dashed #555;
+        margin: 30px;
+        height: 200px;
+        justify-content: center;
+        /* flex-wrap: wrap; */
+        flex-flow: row wrap;
+        width: 300px;
+        float: left;
+        position: relative;
+      }
+      .container::after {
+        content: "";
+        display: inline-block;
+        background-color: #333;
+        padding: 10px 20px;
+        color: #ccc;
+        text-align: center;
+        /* line-height: 90px; */
+        position: absolute;
+        right: -60px;
+        top: -30px;
+        width: 50px;
+      }
+      .box {
+        /* padding: 5px; */
+        margin: 5px;
+        width: 100px;
+        background-color: mediumseagreen;
+        border-radius: 15px;
+      }
+      .box:nth-child(2) {
+        background-color: rgba(60, 179, 114, 0.8);
+      }
+      .box:nth-child(3) {
+        background-color: rgba(60, 179, 114, 0.5);
+      }
+      .box:nth-child(4) {
+        background-color: rgba(60, 179, 114, 0.3);
+      }
+      p {
+        text-align: center;
+        color: #ccc;
+        font-size: large;
+      }
+      /* 교차축 시작부터 배치 */
+      #opt1 {
+        align-content: flex-start;
+      }
+      /* 교차축 끝점 기준으로 배치 */
+      #opt2 {
+        align-content: flex-end;
+      }
+      /* 교차축 중앙 기준으로 배치 */
+      #opt3 {
+        align-content: center;
+      }
+      /* 시작점과 끝점 배치 후 중간 항목은 같은 여백으로 */
+      #opt4 {
+        align-content: space-between;
+      }
+      /* 전체 항목을 같은 간격으로 배치 */
+      #opt5 {
+        align-content: space-around;
+      }
+      /* 항목을 늘려 교차축에 가득 차게 배치 */
+      #opt6 {
+        align-content: stretch;
+      }
+
+      #opt1::after {
+        content: "flex-start";
+      }
+      #opt2::after {
+        content: "flex-end";
+      }
+      #opt3::after {
+        content: "center";
+      }
+      #opt4::after {
+        content: "space-between";
+      }
+      #opt5::after {
+        content: "space-around";
+      }
+      #opt6::after {
+        content: "stretch";
+      }
+
+      .container::after {
+        /* display: none; */
+      }
+      .align_center {
+        align-self: center;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1><i class="fas fa-solid fa-bars"></i></h1>
+    <h1><i class="fas fa-solid fa-house"></i></h1>
+    <h1><i class="fas fa-solid fa-dolphin"></i></h1>
+    <h1><i class="fas fa-solid fa-fish-fins"></i></h1>
+    <h1><i class="fas fa-solid fa-hand-holding-heart"></i></h1> -->
+    <h2>align-content</h2>
+    <pre>
+        플렉스 항목이 여러줄로 표시될 때 교차축 기준의 배치 방법 지정
+    </pre>
+    <div class="container" id="opt1">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+      <div class="box">
+        <p>4</p>
+      </div>
+    </div>
+    <div class="container" id="opt2">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+      <div class="box">
+        <p>4</p>
+      </div>
+    </div>
+    <div class="container" id="opt3">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+      <div class="box">
+        <p>4</p>
+      </div>
+    </div>
+    <div class="container" id="opt4">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+      <div class="box">
+        <p>4</p>
+      </div>
+    </div>
+    <div class="container" id="opt5">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+      <div class="box">
+        <p>4</p>
+      </div>
+    </div>
+    <div class="container" id="opt6">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+      <div class="box">
+        <p>4</p>
+      </div>
+    </div>
+  </body>
+</html>

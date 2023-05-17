@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>미디어쿼리 가로전환</title>
+    <style>
+      body {
+        background-color: rosybrown;
+        color: #ddd;
+      }
+
+      /* @media screen and (max-width: 1024px) {
+        body {
+          background-color: royalblue;
+          color: #ccc;
+        }
+    } */
+
+      /* 가로 모드 : 너비 > 높이 */
+      @media screen and (orientation: landscape) {
+        body {
+          background-color: royalblue;
+        }
+      }
+      /* 세로 모드 : 너비 < 높이 */
+      @media screen and (orientation: portrait) {
+        body {
+          background-color: orange;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Media Query</h1>
+  </body>
+</html>

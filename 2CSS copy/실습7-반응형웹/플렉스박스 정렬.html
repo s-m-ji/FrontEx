@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>플렉스박스 정렬</title>
+    <style>
+      .container {
+        display: flex;
+        background-color: #ccc;
+        border: 5px dashed #555;
+        margin: 30px auto;
+        width: 800px;
+        /* height: 200px; */
+        position: relative;
+      }
+      .container::after {
+        content: "";
+        display: inline-block;
+        background-color: #333;
+        padding: 10px 20px;
+        color: #ccc;
+        text-align: center;
+        /* line-height: 90px; */
+        position: absolute;
+        left: -120px;
+        top: 00px;
+        width: 50px;
+      }
+      .box {
+        padding: 5px;
+        margin: 15px;
+        width: 100px;
+        background-color: rgb(225, 149, 149);
+        border-radius: 15px;
+      }
+      .box:nth-child(2) {
+        background-color: rgba(225, 149, 149, 0.85);
+      }
+      .box:nth-child(3) {
+        background-color: rgba(225, 149, 149, 0.7);
+      }
+      .box:nth-child(4) {
+        background-color: rgba(225, 149, 149, 0.55);
+      }
+      p {
+        text-align: center;
+        color: #ccc;
+        font-size: large;
+      }
+      #opt1 {
+        justify-content: flex-start;
+      }
+      #opt2 {
+        justify-content: flex-end;
+      }
+      #opt3 {
+        justify-content: center;
+      }
+      #opt4 {
+        justify-content: space-between;
+      }
+      #opt5 {
+        justify-content: space-around;
+      }
+      #opt1::after {
+        content: "flex-start";
+      }
+      #opt2::after {
+        content: "flex-end";
+      }
+      #opt3::after {
+        content: "center";
+      }
+      #opt4::after {
+        content: "space-between";
+      }
+      #opt5::after {
+        content: "space-around";
+      }
+    </style>
+  </head>
+  <body>
+    <h2>justify-content</h2>
+
+    <div class="container" id="opt1">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+      <div class="box">
+        <p>4</p>
+      </div>
+    </div>
+    <div class="container" id="opt2">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+      <div class="box">
+        <p>4</p>
+      </div>
+    </div>
+    <div class="container" id="opt3">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+      <div class="box">
+        <p>4</p>
+      </div>
+    </div>
+    <div class="container" id="opt4">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+      <div class="box">
+        <p>4</p>
+      </div>
+    </div>
+    <div class="container" id="opt5">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+      <div class="box">
+        <p>4</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>미디어쿼리</title>
+    <style>
+      body {
+        background: url(images/bg0.jpg) no-repeat center / cover;
+      }
+
+      @media screen and (max-width: 1280px) {
+        body {
+          background-image: url(images/bg1.jpg);
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        body {
+          background-image: url(images/bg2.jpg);
+        }
+      }
+
+      @media screen and (max-width: 360px) {
+        body {
+          background-image: url(images/bg3.jpg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Media Query</h1>
+  </body>
+</html>

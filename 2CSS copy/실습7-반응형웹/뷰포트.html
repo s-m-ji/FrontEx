@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- name 설정 이름 content  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>뷰포트</title>
+    <style>
+      @font-face {
+        font-family: "EF_watermelonSalad";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_watermelonSalad.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2")
+          format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "TTCrownMychewR";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/TTCrownMychewR.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      * {
+        font-family: "EF_watermelonSalad";
+        font-family: "PyeongChangPeace-Bold";
+        font-family: "TTCrownMychewR";
+        letter-spacing: 2.5px;
+        line-height: 1.25;
+      }
+      pre {
+        /* font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; */
+      }
+      .em2 {
+        font-size: 2em;
+      }
+
+      .rem2 {
+        font-size: 2rem;
+      }
+
+      html {
+        /* font-size: 10px; */
+      }
+
+      .vw1 {
+        font-size: 1vw;
+      }
+      .vw2 {
+        font-size: 2vw;
+      }
+
+      .vh1 {
+        font-size: 1vh;
+      }
+      .vh2 {
+        font-size: 2vh;
+      }
+      .vmin2 {
+        font-size: 2vmin;
+      }
+      .vmax2 {
+        font-size: 2vmax;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>viewport</h2>
+    <pre>
+        현재 화면에 보여지는 영역
+        기기별 뷰포트가 다르므로 동일한 웹페이지라도
+        기기에 따른 배율 조정이 발생하여 화면의 크기가 다르게 보이는 현상
+    </pre>
+    <pre>
+        상대 단위 : 고정되지 않고 특정 기준에 따라
+                    유동적으로 가변 (em, rem, %, vh, vh)
+        절대 단위 : 고정되어 불변 (px)
+    </pre>
+    <h3>vw</h3>
+    <!-- 화면 크기가 1200px인 경우 : 12px (*단 크롬 브라우저에서는 최소 폰트 크기는 10px임) -->
+    <p>화면 너비의 1/100 : 1vw</p>
+    <div class="vw1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, pariatur
+      eligendi. Rem magni eius quaerat vel. Consequatur molestiae, voluptatum
+      aspernatur, ipsum iste ex repellat cum facilis reprehenderit quae saepe
+      quasi?
+    </div>
+    <div class="vw2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, pariatur
+      eligendi. Rem magni eius quaerat vel. Consequatur molestiae, voluptatum
+      aspernatur, ipsum iste ex repellat cum facilis reprehenderit quae saepe
+      quasi?
+    </div>
+    <hr />
+    <h3>vh</h3>
+    <p>화면 높이의 1/100 : 1vh</p>
+    <div class="vh1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, pariatur
+      eligendi. Rem magni eius quaerat vel. Consequatur molestiae, voluptatum
+      aspernatur, ipsum iste ex repellat cum facilis reprehenderit quae saepe
+      quasi?
+    </div>
+    <div class="vh2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, pariatur
+      eligendi. Rem magni eius quaerat vel. Consequatur molestiae, voluptatum
+      aspernatur, ipsum iste ex repellat cum facilis reprehenderit quae saepe
+      quasi?
+    </div>
+    <h3>vmin</h3>
+    <p>뷰포트 너비와 높이 중 작은 값의 1%</p>
+    <div class="vmin2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, pariatur
+      eligendi. Rem magni eius quaerat vel. Consequatur molestiae, voluptatum
+      aspernatur, ipsum iste ex repellat cum facilis reprehenderit quae saepe
+      quasi?
+    </div>
+    <h3>vmax</h3>
+    <p>뷰포트 너비와 높이 중 큰 값의 1%</p>
+    <div class="vmax2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, pariatur
+      eligendi. Rem magni eius quaerat vel. Consequatur molestiae, voluptatum
+      aspernatur, ipsum iste ex repellat cum facilis reprehenderit quae saepe
+      quasi?
+    </div>
+    <br /><br />
+    <h2>단위</h2>
+    <pre>
+        브라우저의 기본 글자 크기 : 16px
+    </pre>
+
+    <h2>em과 rem</h2>
+    <pre>
+        font-size에 비례해서 결정되는 상대단위
+        em : 요소의 위치를 기준으로 1em
+        rem : 최상위요소(html)을 기준으로 1rem
+    </pre>
+
+    <div>
+      div 1depth
+      <div class="em2">
+        div 2depth
+        <div class="em2">
+          div 3depth
+
+          <div class="em2">div 4depth</div>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+    <div>
+      div 1depth
+      <div class="rem2">
+        div 2depth
+        <div class="rem2">
+          div 3depth
+          <div class="rem2">div 4depth</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

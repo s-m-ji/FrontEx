@@ -1,0 +1,100 @@
+@font-face {
+  font-family: "TTCrownMychewR";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/TTCrownMychewR.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: "TTCrownMychewR";
+  margin: 0;
+  padding: 0;
+  color: #000;
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  font-size: 2em;
+}
+
+i {
+  font-size: 4em;
+  color: slateblue;
+}
+
+p {
+  font-size: 3em;
+  -moz-text-align-last: justify;
+       text-align-last: justify;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+p i {
+  font-size: 1.5em;
+  color: rgba(255, 166, 0, 0.35);
+}
+
+.box {
+  display: none;
+}
+
+.wrap {
+  box-shadow: 0px 10px 10px #999;
+}
+.wrap header {
+  padding: 10px 30px;
+  position: relative;
+}
+.wrap header .h-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+.wrap header nav {
+  position: absolute;
+  top: 100%;
+  left: -100%;
+  width: 50%;
+  background-color: #ccc;
+  box-shadow: 0px 10px 10px #999;
+  transition: all 1s;
+}
+.wrap header nav .menu li a {
+  display: block;
+  padding: 30px 60px;
+  text-transform: capitalize;
+}
+.wrap header nav .menu li > :hover {
+  background-color: rgba(0, 0, 0, 0.1215686275);
+}
+.wrap header nav .menu li .sub {
+  height: 0;
+  transition: all 1s;
+}
+.wrap header nav .menu li .sub li {
+  border-bottom: 1px dashed #000;
+}
+.wrap header nav .menu li .sub li:last-child {
+  border: none;
+}
+.wrap header nav .menu li .sub a {
+  padding: 30px 60px;
+}
+.wrap header nav .menu li:hover .sub {
+  height: -moz-max-content;
+  height: max-content;
+  height: 280px;
+}
+.wrap header nav .menu > li {
+  overflow: hidden;
+  border-bottom: 1px solid #000;
+}
+.wrap header nav .menu > li:last-child {
+  border: none;
+}
+.wrap header .fa-bars:hover + nav,
+.wrap header nav:hover {
+  left: 0px;
+}
