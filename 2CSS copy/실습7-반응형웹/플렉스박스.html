@@ -4,16 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>플렉스박스</title>
+    <title>flex-direction</title>
     <style>
       .container {
         /* 플렉스 컨테이너 지정 */
         display: flex;
         margin: 30px auto;
-        width: 800px;
+        width: 700px;
         background-color: #ccc;
         border: 5px dashed #333;
-        /* margin-bottom: 30px; */
         position: relative;
       }
       .container::after {
@@ -23,10 +22,9 @@
         padding: 10px 20px;
         color: #ccc;
         text-align: center;
-        /* line-height: 90px; */
         position: absolute;
         left: -120px;
-        top: 00px;
+        top: 0px;
         width: 50px;
       }
       .box {
@@ -44,9 +42,9 @@
       }
 
       p {
-        color: #ccc;
+        color: #eee;
         text-align: center;
-        font-size: 2vw;
+        /* font-size: 2vw; */
       }
       #opt1 {
         flex-direction: row;

@@ -1,34 +1,49 @@
 @charset "UTF-8";
+* {
+  font-family: "TTCrownMychewR";
+  margin: 0;
+  padding: 0;
+  color: #000;
+  list-style: none;
+  text-decoration: none;
+}
+
 .FlexBox {
   display: flex;
   align-items: center;
   -moz-text-align-last: justify;
        text-align-last: justify;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
 }
 
 #SilicaGelBox {
   text-align: center;
   position: relative;
   top: 100px;
-  background: url(images/SilicaGel.jpg) top left/contain;
+  background: url(images/SilicaGel.jpg) top left/50%;
   height: calc(100vh-300px);
   height: 300px;
 }
-#SilicaGelBox header {
-  width: 100%;
-}
 #SilicaGelBox__title {
-  background-color: #555;
-  color: #ddd;
   color: orange;
+  color: #555;
+  background-color: #ddd;
   transition: 1s all;
   width: 100%;
+  margin-bottom: 50px;
 }
 #SilicaGelBox__title span:first-of-type {
   color: rgba(255, 166, 0, 0.2);
 }
+#SilicaGelBox__title span:nth-of-type(2) {
+  color: rgba(255, 166, 0, 0.5);
+}
 #SilicaGelBox__title span:last-of-type {
-  color: rgb(255, 166, 0);
+  color: rgba(255, 166, 0, 0.9);
 }
 #SilicaGelBox__title:hover {
   color: #e62837;
@@ -36,11 +51,13 @@
 #SilicaGelBox__txt {
   font-style: italic;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 2em;
   font-family: "나눔고딕";
   color: #555;
   transition: 1s all;
+  width: 100%;
   background-color: rgba(85, 85, 85, 0.1882352941);
+  margin-bottom: 50px;
 }
 #SilicaGelBox__txt:hover {
   font-style: bold;
@@ -52,4 +69,33 @@
   #SilicaGelBox__txt {
     font-style: normal;
   }
+}
+#SilicaGelBox__txt2 {
+  margin-bottom: 50px;
+  color: orange;
+  background-color: #999;
+  padding: 10px;
+}
+#SilicaGelBox .bg-list li {
+  width: 32.333%;
+  height: 200px;
+  display: inline-block;
+}
+#SilicaGelBox .bg-list li:first-child {
+  background: url("images/SilicaGel.jpg") top left/33.333%;
+}
+#SilicaGelBox .bg-list li:nth-child(2) {
+  background: url("images/SilicaGel2.jpg") top left/33.333%;
+}
+#SilicaGelBox .bg-list li:last-child {
+  background: url("images/SilicaGel3.png") top left/33.333%;
+}
+#SilicaGelBox .btn-list button:first-child {
+  width: 100px;
+  height: 100px;
+}
+#SilicaGelBox .btn-list button:last-child {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }

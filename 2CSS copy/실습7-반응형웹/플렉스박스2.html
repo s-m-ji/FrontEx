@@ -4,15 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>플렉스박스2</title>
+    <title>flex-wrap</title>
     <style>
       .container {
         display: flex;
-        /* display: inline-block; */
         background-color: #ccc;
         border: 5px dashed #555;
         margin: 30px auto;
-        width: 800px;
+        width: 700px;
         position: relative;
       }
       .container::after {
@@ -22,15 +21,13 @@
         padding: 10px 20px;
         color: #ccc;
         text-align: center;
-        /* line-height: 90px; */
         position: absolute;
         left: -120px;
-        top: 00px;
+        top: 0px;
         width: 50px;
       }
       .box {
-        /* display: inline-block; */
-        padding: 5px 45px;
+        padding: 5px;
         margin: 15px;
         width: 100px;
         background-color: royalblue;

@@ -1,3 +1,13 @@
+// css 초기화
+* {
+  font-family: "TTCrownMychewR";
+  margin: 0;
+  padding: 0;
+  color: #000;
+  list-style: none;
+  text-decoration: none;
+}
+
 $c-steelblue: steelblue;
 $c-fff: #fff;
 $c-ddd: #ddd;
@@ -11,8 +21,10 @@ $position: top;
 $name: SilicaGel;
 $height: 300px;
 
-$size: 100;
+$size: 100%;
+$mb: 50px;
 
+// 폰트 속성을 한 줄에 기입할 수 있는 믹스인 생성
 @mixin font(
   // $color: #000,
   $style: normal,
@@ -29,10 +41,33 @@ $size: 100;
   }
 }
 
+// 글자색과 배경색을 한 줄에 기입할 수 있는 믹스인 생성
+@mixin set-color($color, $bg-color) {
+  color: $color;
+  background-color: $bg-color;
+}
+
+// 배경이미지의 이름만 기입하여 쓰도록하는 믹스인 생성
+@mixin bg-img($name, $path: "images/", $format: "jpg") {
+  background: url("#{$path}SilicaGel#{$name}.#{$format}") top left / 33.333%;
+}
+
+// 버튼 스타일을 지정할 수 있는 믹스인 생성 - @if문 포함
+@mixin bt-style($size, $radius: 0, $bg) {
+  width: $size;
+  height: $size;
+  background-color: $bg;
+
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+}
+
 .FlexBox {
   display: flex;
   align-items: center;
   text-align-last: justify;
+  flex-direction: column;
 }
 
 header {
@@ -43,7 +78,7 @@ header {
   text-align: center;
   position: relative;
   #{$position}: 100px;
-  background: url(images/#{$name}.jpg) top left / contain;
+  background: url(images/#{$name}.jpg) top left / 50%;
   // 백그라운드 속성을 한번에 다 적을 때 사이즈는 position요소와 함께, / 이후에 적어야한다.
   // background-image: center/contain url("<images/#{$name}.jpg>");
   // background-size: contain;
@@ -51,20 +86,25 @@ header {
   height: #{$height};
 
   &__title {
-    background-color: $c-333;
-    color: $c-ddd;
+    // background-color: $c-333;
+    // color: $c-ddd;
     // $c-ddd: orange !default;
     color: orange;
+    @include set-color($c-333, $c-ddd);
     // transition: $ts;
     // $ts: 1s all !global;
     transition: $ts;
     width: $size;
+    margin-bottom: $mb;
 
     span:first-of-type {
       color: rgba(255, 166, 0, 0.2);
     }
+    span:nth-of-type(2) {
+      color: rgba(255, 166, 0, 0.5);
+    }
     span:last-of-type {
-      color: rgba(255, 166, 0, 1);
+      color: rgba(255, 166, 0, 0.9);
     }
 
     &:hover {
@@ -75,12 +115,14 @@ header {
   &__txt {
     // $fs-it: italic;
     // font-style: fs-it;
-    $font-values: italic, bold, 1em, "나눔고딕";
+    $font-values: italic, bold, 2em, "나눔고딕";
     @include font($font-values...);
     color: $c-333;
     transition: $ts;
-    height: #{$size} * 1em;
+    // height: #{$size};
+    width: #{$size};
     background-color: #55555530;
+    margin-bottom: $mb;
 
     &:hover {
       $font-values: bold;
@@ -89,6 +131,47 @@ header {
 
     @media screen and (max-width: 768px) {
       font-style: normal;
+    }
+  }
+
+  &__txt2 {
+    margin-bottom: $mb;
+    @include set-color(orange, #999);
+    padding: 10px;
+  }
+
+  .bg-list {
+    li {
+      width: 32.333%;
+      height: 200px;
+      display: inline-block;
+
+      &:first-child {
+        // 기본값이 없는 인자는 필수값 취급되므로, bg-img();처럼 사용하면 에러 발생.
+        // 믹스인 생성 시에 이미 셋팅된 이름에서 바꿀 내용이 없다면 ""이렇게만 적으면 됨.
+        @include bg-img("");
+      }
+      &:nth-child(2) {
+        @include bg-img("2");
+      }
+      &:last-child {
+        @include bg-img("3", $format: "png");
+      }
+    }
+  }
+
+  .btn-list {
+    li {
+      display: inline-block;
+      text-align: center;
+      button {
+        &:first-child {
+          @include bt-style(100px, "", orange);
+        }
+        &:last-child {
+          @include bt-style(100px, $radius: 50%, orangered);
+        }
+      }
     }
   }
 }

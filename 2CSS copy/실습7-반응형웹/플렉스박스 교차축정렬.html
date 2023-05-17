@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>플렉스박스 교차축정렬</title>
+    <title>align-items</title>
     <style>
       .container {
         display: flex;
@@ -15,7 +15,7 @@
         height: 200px;
         justify-content: center;
         position: relative;
-        width: 800px;
+        width: 700px;
       }
       .container::after {
         content: "";
@@ -26,7 +26,8 @@
         text-align: center;
         /* line-height: 90px; */
         position: absolute;
-        left: 30px;
+        /* left: 30px; */
+        left: -120px;
         top: 30px;
         width: 50px;
       }
