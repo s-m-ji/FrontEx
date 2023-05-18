@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>별점주기</title>
+    <style>
+      .starRate {
+        position: relative;
+        margin: 50px;
+        font-size: 2em;
+      }
+      .starRate div {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 1em;
+      }
+      .starRate div:first-child {
+        /* z-index: -1; */
+        width: 1em;
+        overflow: hidden;
+      }
+      .starRate:nth-child(2) div:first-child {
+        /* z-index: -1; */
+        width: 2em;
+        overflow: hidden;
+      }
+      .starRate:nth-child(3) div:first-child {
+        /* z-index: -1; */
+        width: 3em;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="starRate">
+      <div>★★★★★</div>
+      <div>☆☆☆☆☆</div>
+    </div>
+    <div class="starRate">
+      <div>★★★★★</div>
+      <div>☆☆☆☆☆</div>
+    </div>
+    <div class="starRate">
+      <div>★★★★★</div>
+      <div>☆☆☆☆☆</div>
+    </div>
+  </body>
+</html>

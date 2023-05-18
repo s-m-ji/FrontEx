@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid3</title>
+    <style>
+      .wrapper {
+        display: grid;
+        width: 700px;
+        grid-template-columns: repeat(3, 1fr);
+        /* grid-template-columns: 1fr 2fr 1fr; */
+        grid-template-rows: repeat(3, 1fr);
+        margin: 0 auto;
+        grid-template-areas:
+          "b1 b1 b1"
+          "b2 b3 b3"
+          "b2 . b4";
+      }
+      .box {
+        padding: 15px;
+        background-color: rgba(255, 166, 0, 1);
+        color: #fff;
+        font-style: italic;
+        text-align: center;
+      }
+      .box:not(.b1) {
+        color: #333;
+      }
+      /* .box:nth-child(odd) {
+        color: #222;
+      } */
+      .b1 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-column: 1/5;
+        grid-area: b1;
+      }
+      .b2 {
+        grid-row: 2/4;
+        background-color: rgba(255, 166, 0, 0.7);
+        grid-area: b2;
+      }
+      .b3 {
+        grid-column: 2/4;
+        background-color: rgba(255, 166, 0, 0.5);
+        grid-area: b3;
+      }
+      .b4 {
+        grid-column: 3/4;
+        background-color: rgba(255, 166, 0, 0.3);
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-area: b4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box b1">box1</div>
+      <div class="box b2">box2</div>
+      <div class="box b3">box3</div>
+      <div class="box b4">box4</div>
+      <!-- <div class="box b5">box5</div> -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid</title>
+    <style>
+      #grid {
+        display: grid;
+        /* display: inline-grid; */
+        /* grid(블록레벨)이면 with:100%, inline-grid(인라인레벨) width:컨텐츠만큼 */
+        grid-template-columns: auto 1fr;
+      }
+      @media (orientation: portrait) {
+        #grid {
+          grid-template-rows: auto auto 1fr auto;
+          grid-template-areas:
+            "title stats"
+            "score stats"
+            "board board"
+            "ctrls ctrls";
+
+          grid-template-areas: "[title-start] [title-end]";
+        }
+      }
+
+      @media (orientation: landscape) {
+        #grid {
+          grid-template-rows: auto 1fr auto;
+          grid-template-areas:
+            "title board"
+            "stats board"
+            "score ctrls";
+        }
+      }
+
+      #title {
+        grid-area: title;
+      }
+      #score {
+        grid-area: score;
+      }
+      #stats {
+        grid-area: stats;
+      }
+      #board {
+        grid-area: board;
+      }
+      #controls {
+        grid-area: ctrls;
+      }
+      #grid div {
+        padding: 50px;
+        background-color: #999;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="grid">
+      <div id="title">게임 제목</div>
+      <div id="board">게임 보드</div>
+      <div id="controls">컨트롤</div>
+      <div id="stats">통계</div>
+      <div id="score">점수</div>
+    </div>
+  </body>
+</html>

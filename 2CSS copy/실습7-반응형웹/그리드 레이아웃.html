@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid</title>
+    <style>
+      .wrapper {
+        display: grid;
+        border: 1px solid #000;
+        padding: 10px;
+        /* display: flex; */
+        /* 컬럼의 갯수와 크기 지정 */
+        /* px 고정단위이므로 컨텐츠가 길어질 경우 잘려보이는 현상 발생 */
+        grid-template-columns: 200px 200px 200px;
+        grid-template-columns: repeat(3, 33.333%);
+        grid-template-columns: repeat(3, 400px);
+        /* 너비가 3개 */
+        /* fr(fracion)단위 : 그리드 컨테이너의 여유공간을 비율로 나눠서 설정 */
+        grid-template-columns: repeat(3, 1fr);
+        /* 행의 갯수와 크기 지정 */
+        /* 최대/최소값 지정 */
+        grid-template-rows: 100px;
+        /* minmax(최소값,최대값) */
+        grid-template-rows: repeat(2, minmax(100px, auto));
+        gap: 10px 20px;
+        /* row-gap: 20px; */
+        /* column-gap: 40px; */
+      }
+      .item {
+        padding: 10px;
+        background-color: #666;
+      }
+      .item:nth-child(even) {
+        background-color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="item">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      </div>
+      <div class="item">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      </div>
+      <div class="item">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium,
+        minus officiis cupiditate quae distinctio repudiandae ipsum! Ipsam
+        mollitia sequi necessitatibus quae doloribus repudiandae! Esse fuga id
+        ad optio voluptatem vitae?
+      </div>
+      <div class="item">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      </div>
+      <div class="item">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      </div>
+    </div>
+  </body>
+</html>

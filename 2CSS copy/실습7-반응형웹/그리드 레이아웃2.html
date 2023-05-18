@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid2</title>
+    <style>
+      .wrapper1 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 200px);
+        /* 최소값 200px, 최대값 1fr */
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      }
+      .wrapper2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      }
+      .item {
+        padding: 10px;
+        background-color: #666;
+      }
+      .item:nth-child(even) {
+        background-color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>auto-fill/auto-fit</h2>
+    <pre>
+        컬럼의 너비와 함께 auto-fill이나 auto-fit을 지정하면
+        화면 너비에 따라 자동으로 컬럼의 갯수를 조절
+        auto-fill : 남는 공간 없이 꽉 채우기
+        auto-fit : 최소 너비까지 표시하고 남는 공간은 그대로 둠 
+    </pre>
+    <h2>auto-fill</h2>
+    <div class="wrapper1">
+      <div class="item">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      </div>
+      <div class="item">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      </div>
+      <div class="item">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </div>
+      <div class="item">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      </div>
+      <div class="item">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      </div>
+    </div>
+    <h2>auto-fit</h2>
+    <div class="wrapper2">
+      <div class="item">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      </div>
+      <div class="item">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      </div>
+      <div class="item">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </div>
+      <div class="item">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      </div>
+      <div class="item">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      </div>
+    </div>
+  </body>
+</html>

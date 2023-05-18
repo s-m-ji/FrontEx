@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tab</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        box-sizing: border-box;
+        text-decoration: none;
+        color: #222;
+
+        accent-color: #376457;
+        /* accent-color: #eddce8; */
+      }
+      #contents {
+        width: 66.666%;
+        margin: 50px auto;
+        padding: 10px;
+      }
+      .inputWrap {
+        letter-spacing: 0;
+        word-spacing: 0;
+        font-size: 0;
+      }
+
+      #tabMenu input[type="radio"] {
+        display: none;
+      }
+      #tabMenu label {
+        display: inline-block;
+        width: 49%;
+        text-align: center;
+        padding: 15px;
+        font-weight: bold;
+        font-size: 1rem;
+        color: #aaa;
+        border: 1px solid #37645780;
+        /* border-bottom: 0; */
+        border-radius: 20px 20px 0 0;
+      }
+      #tabMenu label:hover {
+        color: #ccc;
+        /* background-color: #eddce8; */
+        background-color: #376457;
+        border-color: #37645780;
+      }
+      #tabMenu label:last-child {
+        /* border-left: none; */
+      }
+      /* #tabMenu input[checked] + label { */
+      #tabMenu input:checked + label {
+        background-color: #eddce8;
+        background-color: #376457;
+        color: #ccc;
+        border-color: #37645780;
+      }
+      .tabContent {
+        display: none;
+        /* margin: 10px 0; */
+        padding: 10px 0px;
+        border-top: 1px solid #376457;
+        transform: translateY(-1px);
+      }
+      .tabContent h2 {
+        display: none;
+      }
+      #tabMenu input#no:checked ~ #notice {
+        display: block;
+      }
+      #tabMenu input#ga:checked ~ #gallery {
+        display: block;
+      }
+      .tabContent#notice ul li {
+        line-height: 2;
+        text-align: center;
+        background-color: #37645780;
+        margin: 10px 0;
+      }
+      .tabContent#gallery {
+        display: grid;
+      }
+      .tabContent#gallery ul {
+        /* display: grid; */
+      }
+      .tabContent#gallery ul li {
+        width: 32.333%;
+        display: inline-block;
+        /* display: inline; */
+      }
+      .tabContent#gallery ul li img {
+        width: 100%;
+        /* width: 100px; */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contents">
+      <div id="tabMenu">
+        <!-- <div class="inputWrap"> -->
+        <input type="radio" name="tabs" id="no" / ><label for="no"
+          >공지사항</label
+        ><!--
+          inline 레벨 요소의 여백을 없애기 위한 엔터 공백 주석 처리
+        --><input type="radio" name="tabs" id="ga" checked /><label for="ga"
+          >갤러리</label
+        >
+        <!-- </div> -->
+        <article id="notice" class="tabContent">
+          <h2>공지사항</h2>
+          <ul>
+            <li>게시글1</li>
+            <li>게시글2</li>
+            <li>게시글3</li>
+            <li>게시글4</li>
+            <li>게시글5</li>
+          </ul>
+        </article>
+        <article id="gallery" class="tabContent">
+          <h2>갤러리</h2>
+          <ul>
+            <li>
+              <img
+                src="https://source.unsplash.com/random/300x200/?cat"
+                alt="음식사진1"
+              />
+            </li>
+            <li>
+              <img
+                src="https://source.unsplash.com/random/300x200/?dog"
+                alt="음식사진2"
+              />
+            </li>
+            <li>
+              <img
+                src="https://source.unsplash.com/random/300x200/?hamster"
+                alt="음식사진3"
+              />
+            </li>
+            <li>
+              <img
+                src="https://source.unsplash.com/random/300x200/?rabbit"
+                alt="음식사진4"
+              />
+            </li>
+            <li>
+              <img
+                src="https://source.unsplash.com/random/300x200/?racoon"
+                alt="음식사진5"
+              />
+            </li>
+            <li>
+              <img
+                src="https://source.unsplash.com/random/300x200/?koala"
+                alt="컵사진1"
+              />
+            </li>
+            <li>
+              <img
+                src="https://source.unsplash.com/random/300x200/?panda"
+                alt="컵사진2"
+              />
+            </li>
+            <li>
+              <img
+                src="https://source.unsplash.com/random/300x200/?quokka"
+                alt="컵사진3"
+              />
+            </li>
+            <li>
+              <img
+                src="https://source.unsplash.com/random/300x200/?kangaroo"
+                alt="컵사진4"
+              />
+            </li>
+            <!-- <li>
+              <img
+                src="https://source.unsplash.com/random/300x200/?cat"
+                alt="컵사진5"
+              />
+            </li> -->
+            <!-- <li><img src="images/dish1.jpg" alt="음식사진1" /></li>
+            <li><img src="images/dish2.jpg" alt="음식사진2" /></li>
+            <li><img src="images/dish3.jpg" alt="음식사진3" /></li>
+            <li><img src="images/dish4.jpg" alt="음식사진4" /></li>
+            <li><img src="images/dish5.jpg" alt="음식사진5" /></li>
+            <li><img src="images/cup-1.jpg" alt="컵사진1" /></li>
+            <li><img src="images/cup-2.jpg" alt="컵사진2" /></li>
+            <li><img src="images/cup-3.jpg" alt="컵사진3" /></li>
+            <li><img src="images/cup-4.jpg" alt="컵사진4" /></li>
+            <li><img src="images/cup-5.jpg" alt="컵사진5" /></li> -->
+          </ul>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
