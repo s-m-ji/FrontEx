@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick='fn_changeCm()'>인치를 센치로 변환하기</button>
+
+    <div id='area'></div>
+    
+    <script>
+      function fn_changeCm(){
+        var inchValue = prompt('인치를 입력해주세요');
+        var cmValue = inchValue * 2.54;
+        var area = document.querySelector('#area');
+        area.innerHTML =  `<b>${inchValue}인치는 ${cmValue}cm 입니다.<b>`
+      }  
+    </script>
+
+</body>
+</html>

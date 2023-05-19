@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "SUITE-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  font-family: "SUITE-Regular";
+}
+body {
+  padding: 30px;
+}
+button {
+  border-radius: 15px;
+  padding: 5px 15px;
+}
+button:hover {
+  cursor: pointer;
+  border-color: #bcbcbc;
+  background: linear-gradient(#eee, #bcbcbc);
+}
+div {
+  margin: 20px 0;
+}
+div.area {
+  padding: 20px;
+}
+form {
+  margin: 20px 0;
+}
+input:invalid {
+  border: 3px solid red;
+}
+.area {
+  border: 1px solid;
+  width: 200px;
+  height: 100px;
+  margin-top: 5px;
+}

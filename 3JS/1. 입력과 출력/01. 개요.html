@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/01. 개요.css" />
+    <script src="js/01. 개요.js"></script>
+    <title>자바스크립트 개요</title>
+  </head>
+  <body>
+    <h1>자바스크립트 개요</h1>
+    <!-- 
+        웹브라우저에서 많이 사용하는 인터프리터 방식의 스크립트 언어 (함수, 객체지향)
+        - 인터프리터 방식 : 컴파일 과정 없이 실행하면서 코드를 하나씩 읽어내는 방식
+        (코드 문법에 오류가 있으면 실행 시점에 알 수 있음)
+    -->
+
+    <hr />
+    <h3>1. 자바스크립트 사용법</h3>
+    <h4>inline(인라인)</h4>
+    <!-- 
+        태그 내에 직접 간단한 코드를 작성하여 실행하는 방법
+        자바스크립트 소스가 몇 줄 안되는 경우 inline 방식을 이용한다.
+      -->
+    <button onclick='alert("호호 ( ˆoˆ )/​")'>인라인으로 적용한 알림창</button>
+    <!-- 
+        onclick : 사용자가 버튼을 클릭하면 실행
+        alert : 알림창
+     -->
+
+    <button onclick='console.log("제목: ", "콘솔창에 로그 남기기 ~~~")'>
+      인라인으로 적용한 콘솔 로그
+    </button>
+
+    <h4>internal(내부)</h4>
+    <!-- 
+        script 태그 영역에 함수 단위로 소스코드를 작성해놓고
+        이벤트 발생 시 해당 함수를 호출함으로써 실행하는 방식이다.
+     -->
+    <button onclick="btnClick()">내부에 적용한 알림창</button>
+    <button id="btn1">내부에 적용한 콘솔로그</button>
+    <script>
+      /*
+        function 함수명(매개변수){
+            
+        }
+    */
+      function btnClick() {
+        alert("히히 (▰˘◡˘▰)");
+      }
+
+      // script 태그 내에서 아이디를 통해 button 요소(객체)를 변수에 대입
+      //   요소를 선택 후 변수에 담기
+      var btn1 = document.getElementById("btn1");
+      var btn1_q = document.querySelector("#btn1");
+
+      //   console.log("btn1: ", btn1);
+      //   console.log("btn1_q: ", btn1_q);
+
+      btn1.onclick = function () {
+        console.log("하하 (ง ᵕᴗᵕ)ว");
+      };
+    </script>
+
+    <h4>external(외부)</h4>
+    <!-- 
+        별도의 .js 파일로 작성하여 html 파일에  연결해 사용하는 방법
+        자바스크립트의 양이 많거나 중복되는 코드가 있을 경우
+        자바스크립트 코드 부분을 별도의 외부 파일로 작성한다
+     -->
+    <button onclick="external()">외부에 적용한 콘솔 로그</button>
+
+    <hr />
+    <h3>2. 데이터 입출력</h3>
+    <h4>1) 데이터 입력</h4>
+    <!-- 
+        window.confirm()
+            - 어떤 질문에 대해 "예/아니오"의 결과를 얻을 때 사용
+            - 확인 버튼 클릭 시 true, 취소 버튼 클릭 시 false를 리턴한다.
+      -->
+    <!-- window.confirm('방콕익스프레스가 기대되나요?') -->
+    <button onclick="checkConfirm()">checkConfirm</button>
+    <script>
+      function checkConfirm() {
+        // console.log(confirm("밴드 음악을 좋아하나요?"));
+        var res = confirm("밴드 음악을 좋아하나요?");
+        if (res) {
+          alert("실리카겔도 들어보세요!");
+        } else {
+          alert("왜용 한번 즐겨보세요 ~~~");
+        }
+      }
+    </script>
+
+    <button onclick="checkPrompt()">checkPrompt</button>
+    <!-- 
+        window.prompt()
+            - 텍스트 필드, 확인, 취소 버튼이 있는 대화 상자를 띄운다
+            - 입력한 메세지 내용을 리턴값으로 돌려받는다.
+      -->
+    <script>
+      function checkPrompt() {
+        var name = prompt("좋아하는 밴드 적어주세요.");
+        console.log(name);
+
+        // 취소 버튼 : null 반환
+        // 확인 버튼 : 입력된 값 반환
+        if (name != null && name.trim() != "") {
+          alert(name + " 접수 완료 (•̀ᴗ•́)و ̑̑");
+          // ${변수}
+          alert(`바로 ${name} 노래 들으러갑니다!`);
+          // alert(`${name} (•̀ᴗ•́)و ̑̑ \n멋진 밴드네요 !`);
+        } else if (name == null) {
+          alert("에엥 왜 취소해요옹");
+          //   alert("사랑해요 ~ 버터쿠키 ~~ ");
+        }
+      }
+    </script>
+
+    <h4>2) 데이터 출력</h4>
+    <!-- 
+    document.write()
+        - 브라우저 화면상의 페이지에 직접 값을 출력한다
+ -->
+    <script>
+      document.write(
+        "<b/>document.write</b>로 출력해봅니당 -> ※ 콘솔창에서 확인"
+      );
+    </script>
+
+    <!-- 
+    innerHTML 속성으로 요소 내용 변경
+ -->
+    <div id="div">
+      <!-- ---------- div 시작 ---------- -->
+      <p>
+        <i>자바스크립트</i>에서 태그 요소의 값을 읽거나 변경할 때
+        <b>innerHTML</b> 속성을 사용한다
+      </p>
+      <!-- ---------- div 끝 ---------- -->
+    </div>
+    <button onclick="checkInnerHTML()" id="div1">checkInnerHTML</button>
+    <script>
+      function checkInnerHTML() {
+        let div1 = document.querySelector("#div1");
+        console.log(div1);
+        console.log("읭??????????");
+        console.log("innerHTML : ", div.innerHTML);
+        console.log("innerText : ", div.innerText);
+
+        div.innerHTML += "<br> innerHTML 속성으로 값 변경";
+      }
+    </script>
+
+    <h4>console.log()</h4>
+    <!-- 
+        console.log()
+        - 개발자 도구의 콘솔 화면에 출력하고자 할 때 사용한다. (주로 디버깅 시 사용)
+     -->
+    <!-- <button onclick='clickConsole(); 다른 함수; ...'></button> -->
+    <button onclick="checkConsole()">checkConsole</button>
+    <script>
+      function checkConsole() {
+        console.log("새소년의 파도를 들어보자!");
+      }
+    </script>
+
+    <h3>3. HTML 요소에 접근하기</h3>
+    <h4>1) 아이디로 접근</h4>
+    <button onclick="accessId()">accessId</button>
+    <div id="area2" class="area">지코의</div>
+    <div id="area1" class="area">test1</div>
+    <div class="area">test2</div>
+
+    <script>
+      // 함수 생성
+      function accessId() {
+        // id area인 요소를 변수 area1에 담는다.
+        // var area1 = document.querySelector("#area1");
+        //   var area1 = document.getElementById("area1");
+
+        // 아래처럼 하면 클래스로 접근하기
+        var area1 = document.querySelector(".area");
+        var area_list = document.querySelectorAll(".area");
+        // var area_list = document.querySelectorAll("#area1, #area2");
+        for (var i = 0; i < area_list.length; i++) {
+          area_list[i].style.fontSize = "2rem";
+        }
+
+        // alert("아이디로 접근을 참 잘했어요 ʕ ᵔᴥᵔ ʔ");
+
+        area1.style.backgroundColor = "royalblue";
+        area1.style.color = "#fff";
+        area1.innerHTML += " 버터쿠키 터프쿠키 떡볶이 청바지";
+        // 만약 클릭할 때마다 단어를 붙이고 싶다면 ? -> 배열에 값을 담아놓고 하나씩 데려올 수 없나?
+      }
+    </script>
+
+    <h4>2) 태그명으로 접근</h4>
+    <ul>
+      <li>목록1</li>
+      <li>목록2</li>
+      <li>목록3</li>
+      <li>목록4</li>
+      <li>목록5</li>
+    </ul>
+
+    <button onclick="accessTagName();">accessTagName</button>
+    <script>
+      function accessTagName() {
+        var list = document.getElementsByTagName("li");
+        var list_q = document.querySelectorAll("li");
+        console.log("list: ", list);
+        console.log("list_q: ", list_q);
+
+        //   0~255까지 숫자값을 입력
+        // R 빨강 0 ~255
+        // G 초록 0 ~255
+        // B 파랑 0 ~255
+
+        var red;
+        var green;
+        var blue;
+        for (var i = 0; i < list.length; i++) {
+          list[i].style.fontSize = "2rem";
+
+          //   red = Math.random()*255;
+          //   red = parseInt(Math.random() * 255) + 1;
+          red = parseInt(Math.random() * 256);
+          // 위 2개는 어떤 차이가 있는지 log 찍어서 확인해보기
+
+          green = parseInt(Math.random() * 255) + 1;
+          blue = parseInt(Math.random() * 255) + 1;
+          list[i].style.backgroundColor = `rgb(${red},${green},${blue})`;
+        }
+      }
+    </script>
+
+    <h4>3) name으로 접근</h4>
+
+    <form action="">
+      <fieldset>
+        <legend>취미</legend>
+        <label for=""
+          ><input type="checkbox" name="hobby" value="game" id="" />게임</label
+        >
+        <label for=""
+          ><input type="checkbox" name="hobby" value="music" id="" />음악</label
+        >
+        <label for=""
+          ><input type="checkbox" name="hobby" value="movie" id="" />영화</label
+        >
+      </fieldset>
+    </form>
+    <button onclick="accessName();">accessName</button>
+    <div id="area3" class="area"></div>
+
+    <script>
+      function accessName() {
+        var hobbies = document.getElementsByName("hobby");
+        var area3 = document.getElementById("area3");
+        var label = document.getElementsByTagName("label");
+        var checkItem = "";
+        console.log(hobbies);
+
+        for (var i = 0; i < hobbies.length; i++) {
+          console.log(hobbies[i].value);
+          console.log(hobbies[i].checked);
+
+          //   체크된 상태라면?
+          if (hobbies[i].checked) {
+            checkItem += `${hobbies[i].value} 선택 <br> `;
+          }
+          area3.innerHTML = checkItem;
+        }
+      }
+    </script>
+
+    <h4>4) text 박스의 value 값 읽어오기</h4>
+    <form action="">
+      <label for=""
+        >이름 :
+        <input type="text" name="userName" id="userName" pattern="/[0-9]/g" />
+        <span class=""> ※ 숫자는 입력 불가</span></label
+      ><button onclick="readValue();">readValue</button>
+      <!-- 폼태그 안에 버튼이 하나만 존재하면 submit으로 기능한다. -->
+    </form>
+    <!-- <button onclick="readValue();">readValue</button> -->
+    <div id="area4" class="area"></div>
+
+    <script>
+      function readValue() {
+        // 버튼을 클릭하면 input 태그의 값을 확인(빈 문자열, legnth==0)
+        //  값이 있으면 area4에 출력
+        //  없으면 메세지 출력 alert('키미노 나마에와???')
+        var input = document.querySelector("#userName");
+        var area = document.querySelector("#area4");
+        var value = input.value;
+        // 값을 변수에 저장
+        // var getInnerHTML = input.innerHTML;
+        // 대입연산자를 붙여주면 값을 변경
+        // input.innerHTML = "";
+
+        if (value.trim() == "" || value.length == 0) {
+          //  숫자를 입력하면 오류라고 인식하는 기능은 ???
+          alert("키미노 나마에와???");
+          area.innerHTML = "";
+          input.focus();
+        } else {
+          area.innerHTML = value;
+          //   area.innerHTML = value.replace(/[0-9]/g, "");
+        }
+      }
+    </script>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </body>
+</html>
