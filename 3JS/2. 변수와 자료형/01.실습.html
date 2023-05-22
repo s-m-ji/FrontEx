@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="2. 변수와 자료형.css" />
+    <script src="01.실습.js"></script>
+    <title>01.실습</title>
+  </head>
+  <body></body>
+  <!-- <script src="01.실습.js"></script> -->
+  <!-- 01.실습.js:5 Uncaught TypeError: Cannot read properties of null (reading 'style')
+    at setColor (01.실습.js:5:17)
+    at 01.실습.js:8:1 -->
+  <!-- body가 준비되기 전에 script가 먼저 실행되어서 null 오류를 발생하여 script를 body태그 밑으로 배치 -->
+  <!-- 그러나 이것보다는 window.onload 함수를 사용하여 스크립트가 어떤 위치에 있든 실행에 오류가 없도록 하는 것을 권장한다 ! -->
+</html>
