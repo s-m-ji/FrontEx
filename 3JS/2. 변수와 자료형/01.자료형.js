@@ -32,7 +32,7 @@ function typeTest2() {
   console.log("와우2");
 
   // 배열 선언
-  let city = ["대구", "인천", "광주", "대전"];
+  let city = ["부산", "대구", "인천", "광주", "대전", "울산"];
   let area2 = document.getElementById("area2");
   area2.innerHTML = "객체 테스트<br>";
   area2.innerHTML += `city : ${city} type : ${typeof city}<br>`;
@@ -67,7 +67,7 @@ function typeTest2() {
     age: 20,
     height: 160.5,
     id: "test",
-    city: ["대구", "인천", "광주", "대전"],
+    city: ["부산", "대구", "인천", "광주", "대전", "울산"],
   };
   console.log("user", user);
   console.log("user.name", user.name);

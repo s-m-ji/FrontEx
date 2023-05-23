@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="2. 변수와 자료형.css" />
+    <script src="02.실습_로또생성기.js"></script>
+    <title>02.실습_로또생성기</title>
+    <!-- <script>
+      function lotto() {
+        var balls = document.querySelectorAll(".ball");
+        var numbers = []; // 생성된 숫자들을 저장할 배열입니다.
+
+        // 1부터 10까지의 숫자를 배열에 추가합니다.
+        for (var i = 1; i <= 10; i++) {
+          numbers.push(i);
+        }
+
+        balls.forEach(function (ball) {
+          var randomIndex = Math.floor(Math.random() * numbers.length); // numbers 배열에서 무작위로 인덱스를 선택합니다.
+          var randomNum = numbers.splice(randomIndex, 1)[0]; // 선택된 인덱스에 해당하는 숫자를 배열에서 제거하고 가져옵니다.
+          ball.textContent = randomNum; // 가져온 숫자를 .ball 요소의 텍스트로 설정합니다.
+        });
+      }
+    </script> -->
+
+    <!-- <script>
+      window.onload = function () {
+        let btn1 = document.getElementById("btn1");
+        let lottoDiv = document.querySelector("div[id=lottoDiv]");
+        btn1.onclick = function () {
+          lottoDiv.innerHTML = "";
+          for (i = 0; i < 5; i++) {
+            let num = parseInt(Math.random() * 45) + 1;
+            lottoDiv.innerHTML += `<div class="ball">${num}</div>`;
+          }
+        };
+        let ballColor = document.querySelectorAll("div[class=ball]");
+        for (let i in ballColor) {
+          let color = getColor();
+          ballColor[i].style.backgroundColor = color;
+        }
+      };
+
+      function getColor() {
+        console.log("색상");
+        var r = parseInt(Math.random() * 256);
+        var g = parseInt(Math.random() * 256);
+        var b = parseInt(Math.random() * 256);
+        return `rgb(${r}, ${g}, ${b})`;
+      }
+    </script> -->
+    <style>
+      .ball {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 50%;
+        background: #ccc;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>로또생성기</h1>
+    <button onclick="lotto()" id="btn1">lotto</button>
+    <div id="lottoDiv">
+      <div class="ball">1</div>
+      <div class="ball">1</div>
+      <div class="ball">1</div>
+      <div class="ball">1</div>
+      <div class="ball">1</div>
+    </div>
+  </body>
+</html>
