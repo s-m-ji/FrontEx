@@ -63,6 +63,9 @@ function input() {
   이로 인해 두 코드의 동작은 약간 다를 수 있습니다. 
   예를 들어, 첫 번째 코드에서 strInput 변수에 값을 할당한 후에는 해당 값이 변수에 그대로 남아 있습니다. 
   그에 반해 두 번째 코드에서는 strInput.value를 변경하여 입력 요소의 값 자체가 바뀌게 됩니다. 
+
+  => 1번 값을 변경하면 변수가 바뀌는 것 / 2번은 속성값이 바뀌는 것
+  ==>> 속성값을 바꾸고 싶다면 변수에 담지 않고 document.getElementById("strInput").value = '' 이렇게 접근하면된다.
   */
 }
 
@@ -93,19 +96,53 @@ function print() {
 
 // ======================================== 문제 4)  ========================================
 function arrayTest3() {
-  var stringla4 = document.getElementById("stringla4").innerText.split(" ");
+  // var stringla4 = document.getElementById("stringla4").innerText.split(" ");
+  // var remove = document.getElementById("remove");
+  // var add = document.getElementById("add");
+  // var index = stringla4.indexOf(remove.value);
+  // var index2 = stringla4.indexOf(add.value);
+  // stringla4.splice(index, 1);
+  // // stringla4.push(add.value);
+  // stringla4.splice(1, 0, add.value); // 이렇게하면 인덱스 1번째 자리에 추가된당.
+  // document.getElementById("print4").innerHTML = stringla4;
+  // remove.value = "";
+  // add.value = "";
+  //  TODO 왜 배열의 길이가 고정되어있는걸까 ?
 
-  var remove = document.getElementById("remove").value;
-  var add = document.getElementById("add").value;
+  // 보기에 입력된 문자열을 배열로 만들기
+  let str = document.getElementById("stringla4").innerHTML;
+  let arr = str.split(" ");
 
-  var index = stringla4.indexOf(remove);
-  var index2 = stringla4.indexOf(add);
+  // 텍스트 필드에 입력된 값을 변수에 저장
+  // let remove = document.getElementById("remove").value;
+  let remove = document.getElementById("remove");
+  // remove.value;
 
-  stringla4.splice(index, 1);
-  stringla4.splice(index2, 0, add);
-  //   stringla4.concat(add);
+  // let add = document.getElementById("add").value;
+  let add = document.getElementById("add");
+  // add.value;
 
-  document.getElementById("print4").innerHTML = stringla4;
+  // 삭제할 요소의 인덱스를 확인 후 삭제
+  let index = arr.indexOf(remove.value);
+  if (index >= 0) {
+    arr.splice(index, 1);
+  }
+  // 만약 indexOf()를 쓰지 않을거라면 for문으로 대체할 수 있다.
+  /*
+  for(i=0; i<arr.length; i++){
+    if(arr[i] === remove){
+      arr.splice(i,1);
+      break;
+    }
+  }
+  */
 
-  console.log(stringla4);
+  // 추가할 요소를 배열 맨 마지막에 추가
+  arr.push(add.value);
+  // 배열의 마지막에 계속해서 추가할 수 없는 이유는
+  // 삭제/추가하는 부분이 [보기]의 값이지 출력 창에 나타나는 배열을 수정하는 것이 아니기 때문이다.
+  // 만약 출력 창에 나타난 배열에 직접 push하고 출력한다면 배열을 계속 늘릴 수 있다.
+
+  // 출력
+  document.getElementById("print4").innerHTML = arr.join(" | ");
 }

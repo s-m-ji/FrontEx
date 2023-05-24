@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="2. 변수와 자료형.css" />
+    <style>
+      table {
+        border: 10px outset #ccc;
+        padding: 30px 10px;
+        border-radius: 15px;
+      }
+      div,
+      button {
+        width: 80px;
+        height: 50px;
+        font-size: 1em;
+      }
+      button {
+        border-color: #bcbcbc;
+        background: linear-gradient(#eee, #bcbcbc);
+        border-width: thin;
+        border-width: 1px;
+      }
+      button:hover {
+        border-color: #999;
+        background: linear-gradient(#eee, #888);
+      }
+      #result {
+        box-sizing: border-box;
+        width: 100%;
+        line-height: 50px;
+        margin-bottom: 30px;
+        background: #ddd;
+        border-radius: 15px;
+        font-weight: bold;
+        text-align: right;
+        padding-right: 15px;
+        /* text-indent: 20px; */
+        /* direction: rtl; */
+        border-top: 1px solid #bcbcbc;
+        border-bottom: 1px solid #bcbcbc;
+        font-size: 1.5em;
+        /* overflow-x: scroll; */
+      }
+    </style>
+    <title>계산기 실습</title>
+  </head>
+  <body>
+    <h1>계산기 실습</h1>
+
+    <hr />
+
+    <div>
+      <!-- <table>
+        <tr>
+          <td colspan="4">
+            <div id="result">0</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="left" onclick="btnClick(this.innerHTML);">(</button>
+          </td>
+          <td>
+            <button id="right" onclick="btnClick(this.innerHTML);">)</button>
+          </td>
+          <td>
+            <button id="percent" onclick="btnClick(this.innerHTML);">%</button>
+          </td>
+          <td>
+            <button id="clear" onclick="btnClick(this.innerHTML);">AC</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="seven" onclick="btnClick(this.innerHTML);">7</button>
+          </td>
+          <td>
+            <button id="eight" onclick="btnClick(this.innerHTML);">8</button>
+          </td>
+          <td>
+            <button id="nine" onclick="btnClick(this.innerHTML);">9</button>
+          </td>
+          <td>
+            <button id="devide" onclick="btnClick(this.innerHTML);">/</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="four" onclick="btnClick(this.innerHTML);">4</button>
+          </td>
+          <td>
+            <button id="five" onclick="btnClick(this.innerHTML);">5</button>
+          </td>
+          <td>
+            <button id="six" onclick="btnClick(this.innerHTML);">6</button>
+          </td>
+          <td>
+            <button id="astric" onclick="btnClick(this.innerHTML);">*</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="one" onclick="btnClick(this.innerHTML);">1</button>
+          </td>
+          <td>
+            <button id="two" onclick="btnClick(this.innerHTML);">2</button>
+          </td>
+          <td>
+            <button id="three" onclick="btnClick(this.innerHTML);">3</button>
+          </td>
+          <td>
+            <button id="minus" onclick="btnClick(this.innerHTML);">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="zero" onclick="btnClick(this.innerHTML);">0</button>
+          </td>
+          <td>
+            <button id="dot" onclick="btnClick(this.innerHTML);">.</button>
+          </td>
+          <td>
+            <button id="equal" onclick="btnClick(this.innerHTML);">=</button>
+          </td>
+          <td>
+            <button id="plus" onclick="btnClick(this.innerHTML);">+</button>
+          </td>
+        </tr>
+      </table> -->
+      <table>
+        <tr>
+          <td colspan="4">
+            <div id="result">0</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="left">(</button>
+          </td>
+          <td>
+            <button id="right">)</button>
+          </td>
+          <td>
+            <button id="percent">%</button>
+          </td>
+          <td>
+            <button id="clear">AC</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="seven">7</button>
+          </td>
+          <td>
+            <button id="eight">8</button>
+          </td>
+          <td>
+            <button id="nine">9</button>
+          </td>
+          <td>
+            <button id="devide">/</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="four">4</button>
+          </td>
+          <td>
+            <button id="five">5</button>
+          </td>
+          <td>
+            <button id="six">6</button>
+          </td>
+          <td>
+            <button id="astric">*</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="one">1</button>
+          </td>
+          <td>
+            <button id="two">2</button>
+          </td>
+          <td>
+            <button id="three">3</button>
+          </td>
+          <td>
+            <button id="minus">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="zero">0</button>
+          </td>
+          <!-- <td>
+            <button id="zero" >00</button>
+          </td>
+          <td>
+            <button id="zero" >000</button>
+          </td> -->
+          <td>
+            <button id="dot">.</button>
+          </td>
+          <td>
+            <button id="equal">=</button>
+          </td>
+          <td>
+            <!-- this : 클릭되는 자기 자신을 의미 -->
+            <button id="plus">+</button>
+            <!--  이 부분을 모든 버튼에 추가하면 된다구요..? -->
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+
+  <script>
+    // TODO 같은 연산자는 반복해서 나올 수 없게 설정
+    // TODO 숫자가 늘어나면 어떻게 보이게할건지 ?
+
+    let buttons = document.getElementsByTagName("button");
+    let operators = ["+", "-", "*", "/", "(", ")", "%"];
+    let check = false;
+    let doubleCheck = null;
+    for (button of buttons) {
+      button.addEventListener("click", function () {
+        // console.log(button);
+        // console.log("addEventListener this", this.innerText);
+        let result = document.getElementById("result");
+        if (this.innerText == "AC") {
+          result.innerHTML = "0";
+          doubleCheck = null;
+        } else if (this.innerText == "=") {
+          result.innerText = eval(result.innerText);
+          doubleCheck = null;
+        } else if (operators.includes(this.innerText)) {
+          if (
+            doubleCheck !== null &&
+            operators.includes(doubleCheck.innerText)
+          ) {
+            let lastIndex = result.innerHTML.length - 1;
+            result.innerHTML =
+              result.innerHTML.slice(0, lastIndex) + this.innerText;
+          } else {
+            result.innerHTML += this.innerText;
+          }
+          doubleCheck = this;
+        } else {
+          if (result.innerHTML == "0") {
+            result.innerHTML = this.innerText;
+          } else {
+            result.innerHTML += this.innerText;
+          }
+        }
+      });
+    }
+
+    // function btnClick(btnTxt) {
+    //   console.log(btnTxt);
+    //   let result = document.getElementById("result");
+    //   if (btnTxt == "AC") {
+    //     result.innerHTML = "0";
+    //   } else if (btnTxt == "=") {
+    //     result.innerText = eval(result.innerText);
+    //   } else {
+    //     if (result.innerHTML == "0") {
+    //       // result라고하면 div만 선택된 것이기 때문에 0과 같은지를 비교할 수 없다.
+    //       result.innerHTML = btnTxt;
+    //     } else {
+    //       result.innerHTML += btnTxt;
+    //     }
+    //   }
+    // }
+  </script>
+</html>

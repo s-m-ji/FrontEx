@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>classList 활용하기</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/darkmode.css" />
+    <style>
+      ::selection {
+        background-color: black;
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 id="mode">mode</h3>
+    <h1 id="title">My Profile</h1>
+    <!-- title 클릭 시  -->
+    <div id="profile">
+      <img src="images/pf.png" alt="도레미" />
+      <div id="desc">
+        <p class="user">이름 : 도레미</p>
+        <p class="user">주소 : somewhere</p>
+        <p class="user">연락처 : 1234-5678</p>
+      </div>
+    </div>
+    <script>
+      title.addEventListener("click", () => {
+        if (!title.classList.contains("clicked")) {
+          title.classList.add("clicked");
+        } else {
+          title.classList.remove("clicked");
+        }
+      });
+
+      // title.onclick = () => {
+      // title.classList.toggle("clicked");
+      // };
+
+      mode.onclick = () => document.body.classList.toggle("dark");
+
+      // const userName = document.querySelector("#desc p");
+      // userName.onclick = () => {
+      //   userName.classList.toggle("blue-italic");
+      // };
+
+      let p_user = document.getElementsByClassName("user");
+      let p_user2 = document.querySelectorAll(".user");
+
+      // p_user[0].onclick = () => {
+      //   p_user[0].classList.toggle("blue-italic");
+      // };
+      // p_user[1].onclick = () => {
+      //   p_user[1].classList.toggle("blue-italic");
+      // };
+      // p_user[2].onclick = () => {
+      //   p_user[2].classList.toggle("blue-italic");
+      // };
+
+      // for (i of p_user) {
+      //   i.addEventListener("click", function () {
+      //     this.classList.toggle("blue-italic");
+      //   });
+      // }
+
+      // for (i in p_user) {
+      //   i.addEventListener("click", function () {
+      //     this.classList.toggle("blue-italic");
+      //   });
+      // }
+
+      // for (i of p_user) {
+      //   i.addEventListener("click", () => {
+      //     i.classList.toggle("blue-italic");
+      //   });
+      // }
+
+      // for (i of p_user) {
+      //   i.addEventListener("click", () => {
+      //     this.bind(this).classList.toggle("blue-italic");
+      //   });
+      // }
+      // 여기서 this는 window를 가리키게 된다.
+      //  해당 함수가 어디에서 호출되느냐에 따라 this가 참조하는게 달라지기 때문에..! 유의
+
+      for (let i of p_user) {
+        i.addEventListener(
+          "click",
+          (function (element) {
+            return function () {
+              element.classList.toggle("blue-italic");
+            };
+          })(i)
+        );
+      }
+    </script>
+  </body>
+</html>
