@@ -107,7 +107,6 @@ function arrayTest3() {
   // document.getElementById("print4").innerHTML = stringla4;
   // remove.value = "";
   // add.value = "";
-  //  TODO 왜 배열의 길이가 고정되어있는걸까 ?
 
   // 보기에 입력된 문자열을 배열로 만들기
   let str = document.getElementById("stringla4").innerHTML;

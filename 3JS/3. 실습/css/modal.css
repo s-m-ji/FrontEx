@@ -1,0 +1,83 @@
+body {
+  background: url(../images/pf2.png),
+    /* radial-gradient(
+      rgba(255, 0, 0, 0.7),
+      rgba(255, 166, 0, 0.7),
+      rgba(255, 255, 0, 0.7),
+      rgba(0, 128, 0, 0.7),
+      rgba(0, 0, 255, 0.7),
+      rgba(76, 0, 130, 0.7),
+      rgba(128, 0, 128, 0.7) */
+      linear-gradient(
+        /* to right top, */ 45deg,
+        rgba(255, 0, 0, 0.7),
+        rgba(255, 166, 0, 0.7),
+        rgba(255, 255, 0, 0.7),
+        rgba(0, 128, 0, 0.7),
+        rgba(0, 0, 255, 0.7),
+        rgba(76, 0, 130, 0.7),
+        rgba(128, 0, 128, 0.7)
+      );
+}
+#modal-box {
+  border: 10px dashed #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+#modal-box.on {
+  display: flex;
+}
+
+button {
+  background-color: #06f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+#modal-contents {
+  background-color: #fff;
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+#modal-contents button {
+  background-color: #fff;
+  color: #ccc;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+#profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+#desc {
+  margin: 10px 20px;
+}
+p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}

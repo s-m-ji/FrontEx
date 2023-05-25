@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연습문제 1</title>
+    <style>
+      #container {
+        width: 600px;
+        margin: 20px auto;
+      }
+      h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 20px;
+        transition: all 5s;
+      }
+      h1:hover {
+        font-size: 5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>마우스 오버하면 이미지 바꾸기</h1>
+      <img src="images/pic-1.jpg" alt="" />
+    </div>
+  </body>
+  <script>
+    var img = document.querySelector("#container > img");
+    // var img = document.querySelector("img").src; // 이렇게하면 변수의 값만 바뀌기 때문에 실제 src 속성을 바꿔줄 수 없다.
+    container.addEventListener("mouseover", function () {
+      img.src = "images/pic-6.jpg";
+    });
+    container.addEventListener("mouseout", function () {
+      img.src = "images/pic-1.jpg";
+    });
+  </script>
+</html>
