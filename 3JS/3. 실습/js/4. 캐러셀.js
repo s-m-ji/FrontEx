@@ -2,8 +2,6 @@ window.onload = function () {
   // i와 pics를 전역 변수로 만들어야 함수 외부에서도 참조 가능하다.
   // const pics = [
 
-  // TODO 이미지 폴더의 파일을 알아서 읽어와서 배열로 만드는건 ?
-
   pics = [
     "pic-1.jpg",
     "pic-2.jpg",

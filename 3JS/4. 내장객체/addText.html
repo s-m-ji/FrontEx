@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../2. 변수와 자료형/2. 변수와 자료형.css" />
+    <title>노드 추가하기</title>
+    <style>
+      #container {
+        border-bottom: 1px dashed #222;
+        margin-bottom: 20px;
+      }
+      h1,
+      h2,
+      button,
+      p {
+        margin-bottom: 20px;
+      }
+      #cart {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>상품 설명</h1>
+      <h2>HTML+CSS+자바스크립트 웹 표준의 정석</h2>
+      <p>한 권으로 끝내는 웹 기본 교과서</p>
+      <p>코딩 완초보도 OK! 기초부터 활용까지 완전정복</p>
+      <button id="order">주문하기</button>
+    </div>
+    <div id="orderInfo"></div>
+    <script>
+      order.addEventListener("click", () => {
+        let odTit = document.createElement("span");
+        let odTxt = document.createTextNode("📘 책 제목 : ");
+        odTit.appendChild(odTxt);
+        let h2Txt = document.querySelector("#container h2").innerHTML;
+        // h2Txt.style.color = "#a396dd";
+        // orderInfo.appendChild(h2Txt);
+        orderInfo.appendChild(odTit);
+        orderInfo.innerHTML += `<span style= "color:#3a96dd;">${h2Txt}</span>`;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="BOM.js"></script>
+    <link rel="stylesheet" href="../2. 변수와 자료형/2. 변수와 자료형.css" />
+    <style>
+      #sc {
+        color: #999;
+      }
+    </style>
+    <title>BOM</title>
+  </head>
+  <body>
+    <h1>BOM(Browser Object Model)</h1>
+    <hr />
+    <h2>window 객체</h2>
+    <p>
+      window 객체는 자바스크립의 최상위 객체이며, 브라우저 내의 모든 요소들과
+      객체를 포함한다.
+    </p>
+    <h3>1) window.open()</h3>
+    <button id="btn1">btn1</button>
+    <h3>2) 타이머 관련 메소드</h3>
+    <p>특정 함수를 일정 시간이 경과된 이후에 호출할 수 있도록 제공된다.</p>
+    <h4>window.setTimeout()</h4>
+    <p>
+      일정 시간이 경과된 이후에 매개값으로 전달된 콜백 함수를 단 한 번만
+      실행한다.
+    </p>
+    <button id="btn2">btn2</button>
+    <h4>window.setInterval()</h4>
+    <p>
+      일정 시간이 경과된 이후에 매개값으로 전달된 콜백 함수를 반복해서 실행한다.
+    </p>
+    <button id="btnStart">btnStart</button>
+    <button id="btnStop">btnStop</button>
+    <div class="area" id="area1"></div>
+
+    <h2>BOM(Browser Object Model) 객체</h2>
+    <h3>1) location 객체</h3>
+    <p>브라우저의 주소 표시줄과 관련된 객체</p>
+    <button id="btn3">btn3</button>
+    <div class="area" id="area2"></div>
+    <h4>location reload()</h4>
+    <p>페이지를 새로고침 하는 메소드</p>
+    <!-- 같은 페이지를 다시 불러오기 때문에 결국 새로고침이 되는 것 -->
+    <button onclick="location.reload();">location.reload()</button>
+    <button onclick="location.href = location.href;">
+      location.href = location.href
+    </button>
+    <button onclick="location = location;">location = location</button>
+    <h4>location.href</h4>
+    <pre>
+        현재 페이지의 URL 주소를 가지고 있는 속성으로 
+        해당 속성의 값을 변경해서 페이지를 이동할 수 있다.
+    </pre>
+        <button onclick="location = 'https://www.naver.com'" target="_blank">
+      naver.com
+    </button>
+    <button onclick="location.href = 'https://www.naver.com'">naver.com</button>
+    <button onclick="window.open('https://www.naver.com', '_blank')">naver.com(새 창)</button>
+    <h4>location.assign()</h4>
+    <button onclick="location.assign('https://www.naver.com')">
+        naver.com
+    </button>
+    <h4>location.replace()</h4>
+    <span> history에 기록되지않음</ㄴp>
+    <button onclick="location.replace('https://www.naver.com')">
+      naver.com
+    </button>
+
+    <h3>2) history 객체</h3>
+    <p>브라우저의 방문 기록과 관련된 객체</p>
+    <!-- 뒤로 가기  -->
+    <!-- back() : history 목록에서 이전페이지를 현재 화면에 불러옴 -->
+    <button onclick="history.back();">history.back()</button>
+    <!-- 앞으로 가기 -->
+    <!-- forward() :  history 목록에서 다음페이지를 현재 화면에 불러옴 -->
+    <button onclick="history.forward();">history.forward()</button>
+    <!-- 이동하기 -->
+    <!-- go(숫자) : history 목록에서 현재 페이지를 기준으로 상대적인 위치에 있는 페이지를 불러옴 -->
+    <button onclick="history.go(-1);">history.go(-1)</button>
+    <button onclick="history.go(1);">history.go(1)</button>
+    <!-- length : 현재 브라우저 창의 history 목록에 있는 항목의 갯수 (방문한 사이트 갯수가 저장됨) -->
+   
+    <h3>3) navigator 객체</h3>
+    <p>웹 페이지를 실행하고 있는 브라우저에 대한 정보를 가지고 있는 객체</p>
+    
+    <h3>4) screen 객체</h3>
+    <p>운영체제의 화면(모니터) 정보를 가지고 있는 객체</p>
+  </body>
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</html>
