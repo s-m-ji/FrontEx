@@ -219,45 +219,18 @@
   </body>
 
   <script>
-    // TODO 같은 연산자는 반복해서 나올 수 없게 설정
-    // TODO 숫자가 늘어나면 어떻게 보이게할건지 ?
+    // let buttons = document.getElementsByTagName("button");
+    // let operators = ["+", "-", "*", "/", "(", ")", "%"];
 
-    let buttons = document.getElementsByTagName("button");
-    let operators = ["+", "-", "*", "/", "(", ")", "%"];
-    let check = false;
-    let doubleCheck = null;
-    for (button of buttons) {
-      button.addEventListener("click", function () {
-        // console.log(button);
-        // console.log("addEventListener this", this.innerText);
-        let result = document.getElementById("result");
-        if (this.innerText == "AC") {
-          result.innerHTML = "0";
-          doubleCheck = null;
-        } else if (this.innerText == "=") {
-          result.innerText = eval(result.innerText);
-          doubleCheck = null;
-        } else if (operators.includes(this.innerText)) {
-          if (
-            doubleCheck !== null &&
-            operators.includes(doubleCheck.innerText)
-          ) {
-            let lastIndex = result.innerHTML.length - 1;
-            result.innerHTML =
-              result.innerHTML.slice(0, lastIndex) + this.innerText;
-          } else {
-            result.innerHTML += this.innerText;
-          }
-          doubleCheck = this;
-        } else {
-          if (result.innerHTML == "0") {
-            result.innerHTML = this.innerText;
-          } else {
-            result.innerHTML += this.innerText;
-          }
-        }
-      });
-    }
+    // for (button of buttons) {
+    //   // console.log(button);
+    //   button.addEventListener("click", function () {
+    //     console.log(this.innerText);
+    //     console.log("addEventListener this", this.innerText);
+
+    //     btnClick(this.innerText);
+    //   });
+    // }
 
     // function btnClick(btnTxt) {
     //   console.log(btnTxt);
@@ -275,5 +248,42 @@
     //     }
     //   }
     // }
+
+    let buttons = document.getElementsByTagName("button");
+    let operators = ["+", "-", "*", "/", "(", ")", "%"];
+    let result = document.getElementById("result");
+    let previousInput = "";
+
+    for (button of buttons) {
+      button.addEventListener("click", function () {
+        let currentInput = this.innerText;
+
+        if (currentInput == "AC") {
+          result.innerHTML = "0";
+          previousInput = "";
+        } else if (currentInput == "=") {
+          result.innerText = eval(result.innerText);
+          previousInput = "";
+        } else if (operators.includes(currentInput)) {
+          if (operators.includes(previousInput)) {
+            // 이전 입력값이 연산자인 경우
+            if (currentInput !== previousInput) {
+              // 현재 입력값과 이전 입력값이 다른 경우에만 추가
+              result.innerHTML += currentInput;
+            }
+          } else {
+            result.innerHTML += currentInput;
+          }
+          previousInput = currentInput;
+        } else {
+          if (result.innerHTML == "0") {
+            result.innerHTML = currentInput;
+          } else {
+            result.innerHTML += currentInput;
+          }
+          previousInput = currentInput;
+        }
+      });
+    }
   </script>
 </html>

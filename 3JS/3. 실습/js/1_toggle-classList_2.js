@@ -43,5 +43,3 @@ $(document).ready(function () {
     $("#detail").toggle(500).toggleClass("hidden");
   });
 });
-
-// TODO 버튼 비활성화 표시에서는 아예 클릭이 되지 않도록 하고싶음..

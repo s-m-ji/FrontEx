@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../2. 변수와 자료형/2. 변수와 자료형.css" />
+    <title>AJAX 공공데이터 활용</title>
+    <style>
+      #result div {
+        width: 100%;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="result"></div>
+    <script>
+      let url =
+        "https://apis.data.go.kr/B551011/GoCamping/locationBasedList?serviceKey=T6p%2F1KPYYChwI77cnJyRt6Y4rCRPpfTnSOpyHUYUKeUQ8fyS9y%2FEPwGmsBpDn4ceAQNm92BrXmpX9C7a6mVVsg%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&mapX=128.6142847&mapY=36.0345423&radius=2000&_type=json";
+      let url2 =
+        "https://apis.data.go.kr/B551011/GoCamping/locationBasedList?serviceKey=T6p%2F1KPYYChwI77cnJyRt6Y4rCRPpfTnSOpyHUYUKeUQ8fyS9y%2FEPwGmsBpDn4ceAQNm92BrXmpX9C7a6mVVsg%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&mapX=126.9451871570239&mapY=37.5564357297533&radius=20000&_type=json";
+
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          doSomething(position.coords.latitude, position.coords.longitude);
+        });
+      } else {
+        alert("위치 정보 사용 불가 : 현재 위치를 알 수 없어용 ");
+      }
+
+      function doSomething(latitude, longitude) {
+        console.log("latitude", latitude);
+        console.log("longitude", longitude);
+
+        let url3 =
+          "https://apis.data.go.kr/B551011/GoCamping/locationBasedList?serviceKey=T6p%2F1KPYYChwI77cnJyRt6Y4rCRPpfTnSOpyHUYUKeUQ8fyS9y%2FEPwGmsBpDn4ceAQNm92BrXmpX9C7a6mVVsg%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&mapX=" +
+          latitude +
+          "&mapY=" +
+          longitude +
+          "&radius=2000000&_type=json";
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("get", url3);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            let jsObj = JSON.parse(xhr.responseText);
+            console.log(jsObj);
+
+            //   for (let i = 0; i < jsObj.response.body.items.item.length; i++) {
+            //     result.innerHTML += `${jsObj.response.body.items.item[i].facltNm} <br>`;
+            //     result.innerHTML += `${jsObj.response.body.items.item[i].lineIntro} <br>`;
+            //     result.innerHTML += `<img src="${jsObj.response.body.items.item[i].firstImageUrl}">`;
+            //   }
+
+            for (obj of jsObj.response.body.items.item) {
+              result.innerHTML += `<h2>${obj.facltNm}</h2>`;
+              result.innerHTML += `<h4>${obj.addr1}</h4>`;
+              result.innerHTML += `<p>${obj.lineIntro}</p>`;
+              result.innerHTML += `<img src="${obj.firstImageUrl}">`;
+            }
+          }
+        };
+      }
+    </script>
+  </body>
+</html>

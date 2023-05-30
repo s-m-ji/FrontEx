@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연습문제 2</title>
+    <link rel="stylesheet" href="css/quiz-2.css" />
+    <script src="js/실습5. timer.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <div id="noti-box">
+      <!-- <div class="noti">알림 내용 표시</div> -->
+    </div>
+    <button id="bttn">클릭!</button>
+  </body>
+  <script>
+    bttn.onclick = () => {
+      let notiBox = document.querySelector("#noti-box");
+      let noti = document.createElement("div");
+      noti.classList.add("noti");
+      noti.innerHTML = "우와";
+      notiBox.appendChild(noti);
+      setTimeout(() => {
+        noti.style.display = "none";
+        // remove()랑 차이는 html 안에 div 코드가 계속 존재하느냐 여부.
+      }, 1500);
+    };
+  </script>
+</html>

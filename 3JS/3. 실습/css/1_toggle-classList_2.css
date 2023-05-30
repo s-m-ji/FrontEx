@@ -41,30 +41,22 @@ li > b {
   border: 1px solid #ccc;
   border-left: none;
   border-right: none;
-  /* cursor: pointer; */
 }
-/* #view:hover */
-/* ,#view:active */
-#view.on {
-  color: #fff;
-  background-color: #116eb1;
-}
+
 #view span {
   display: inline-block;
   padding: 5px 10px;
   margin: 0 5px;
   color: #999;
   background-color: #ddd;
+  pointer-events: none;
 }
-#view span#open,
+#view span#open.on,
 #view span#close.on {
   color: #fff;
   background-color: #116eb1;
   cursor: pointer;
-}
-#view span#open.on {
-  color: #999;
-  background-color: #ddd;
+  pointer-events: auto;
 }
 
 .hidden {

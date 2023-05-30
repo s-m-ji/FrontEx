@@ -21,7 +21,7 @@ window.onload = function () {
     }
 
     let ballColor = document.querySelectorAll("div[class=ball]");
-    // for (let i in ballColor) { // TODO 여기서 계속 오류가 생겼던 이유는 ?
+    // for (let i in ballColor) {
     for (i = 0; i < ballColor.length; i++) {
       let color = getColor();
       ballColor[i].style.backgroundColor = color;

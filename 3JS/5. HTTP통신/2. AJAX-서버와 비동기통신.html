@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+    <link rel="stylesheet" href="css/student.css" />
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid rgb(219, 219, 250);
+        text-align: center;
+      }
+      th {
+        background-color: rgb(200, 200, 247);
+      }
+      td:first-child {
+        width: 100px;
+      }
+      td:nth-child(2) {
+        width: 150px;
+      }
+      td:last-child {
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>수강생 명단</h1>
+      <div id="result"></div>
+    </div>
+    <script>
+      let xhr = new XMLHttpRequest();
+      xhr.open("get", "json/student-2.json");
+      xhr.send();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          let std2 = JSON.parse(xhr.responseText);
+          let table = document.createElement("table");
+          result.appendChild(table);
+          for (obj of std2) {
+            table.innerHTML += `
+                <tr>
+                  <th>${obj.name}</th>
+                  <td>${obj.major}</td>
+                  <td>${obj.grade}</td>
+                </tr>
+              `;
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
