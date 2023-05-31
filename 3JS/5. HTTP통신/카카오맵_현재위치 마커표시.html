@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9774013a3e7198ad3f1d769c73eba967&libraries=clusterer"
+    ></script>
+    <script src="js/카카오맵_현재위치 마커표시.js"></script>
+    <link rel="stylesheet" href="../2. 변수와 자료형/2. 변수와 자료형.css" />
+    <title>지도 생성하기</title>
+  </head>
+  <body>
+    <!-- 지도를 표시할 div 입니다 -->
+    <div id="map" style="width: 100%; height: 350px"></div>
+
+    <form id="campForm">
+      <div class="hidden">
+        serviceKey
+        <input
+          type="text"
+          name="serviceKey"
+          id=""
+          value="T6p%2F1KPYYChwI77cnJyRt6Y4rCRPpfTnSOpyHUYUKeUQ8fyS9y%2FEPwGmsBpDn4ceAQNm92BrXmpX9C7a6mVVsg%3D%3D"
+        />한페이지결과수<br />
+        MobileOS
+        <input
+          type="text"
+          name="MobileOS"
+          id=""
+          value="ETC"
+        />서비스명(어플명)<br />
+        MobileApp
+        <input
+          type="text"
+          name="MobileApp"
+          id=""
+          value="AppTest"
+        />인증키(서비스키)<br />
+        mapX <input type="text" name="mapX" id="" value="" />경도 : GPS
+        X좌표(WGS84 경도 좌표)<br />
+        mapY <input type="text" name="mapY" id="" value="" />위도 : GPS
+        Y좌표(WGS84 위도 좌표)<br />
+        _type <input type="text" name="_type" id="" value="json" /><br />
+        _type : json 형식으로 받아오기 위해 _type에 json값을 넣어 줍니다
+      </div>
+      numOfRows
+      <input type="text" name="numOfRows" id="" value="50" />페이지번호<br />
+      pageNo <input type="text" name="pageNo" id="" value="1" />OS 구분 : IOS
+      (아이폰), AND (안드로이드), WIN (윈도우폰), ETC(기타)<br />
+      radius <input type="text" name="radius" id="" value="20000" />거리 반경 :
+      거리 반경(단위:m) ,Max값 20000m=20Km<br />
+
+      <p><button id="btnCampInfo">캠핑장 정보 조회</button></p>
+    </form>
+
+    <div id="result"></div>
+  </body>
+</html>
