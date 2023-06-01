@@ -11,11 +11,6 @@
 mark {
   background-color: #adff2f96;
 }
-button,
-input[type="submit"] {
-  border-radius: 15px;
-  padding: 5px 15px;
-}
 a {
   border-radius: 15px;
   padding: 5px 15px;
@@ -26,6 +21,11 @@ a {
   border-color: buttonborder;
 }
 
+button,
+input[type="submit"] {
+  border-radius: 15px;
+  padding: 5px 15px;
+}
 button:hover,
 a:hover,
 input[type="submit"]:hover {

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="test.js"></script>
+    <style>
+      .title,
+      #area1 {
+        display: inline-block;
+        margin: 15px;
+      }
+      #sc {
+        font-weight: bold;
+      }
+      button,
+      input[type="submit"],
+      input[type="reset"] {
+        border-radius: 15px;
+        padding: 5px 15px;
+      }
+      button:hover,
+      input[type="submit"]:hover,
+      input[type="reset"]:hover {
+        cursor: pointer;
+        border-color: #bcbcbc;
+        background: linear-gradient(#eee, #bcbcbc);
+      }
+      form {
+        text-align: center;
+        width: fit-content;
+      }
+      table {
+        text-align: left;
+      }
+      table th {
+        width: 100px;
+      }
+      table caption,
+      table #colspan {
+        text-align: center;
+      }
+      .formDiv {
+        display: none;
+      }
+      .formDiv.View {
+        display: block;
+      }
+    </style>
+    <title>웹 표준 기술</title>
+  </head>
+  <body>
+    <span class="title">[문항1]</span>
+    <div class="area" id="area1"></div>
+    <br />
+    <span class="title">[문항2]</span>
+    <button id="btn" onclick="testJson();">testJson</button>
+    <br />
+    <span class="title">[문항3]</span>
+    <span>margin - border - padding - content</span>
+    <br />
+    <span class="title">[문항4]</span>
+    <button id="btn2">회원가입하기</button>
+    <div class="formDiv">
+      <form action="" method="post" onsubmit="return validateForm()">
+        <caption>
+          회원 가입폼
+        </caption>
+        <table border="1">
+          <tr>
+            <th>ID</th>
+            <td>
+              <input type="text" name="" id="ID" />
+              <input type="button" value="ID중복검사" />
+            </td>
+          </tr>
+          <tr>
+            <th>비밀번호</th>
+            <td>
+              <input type="password" name="" id="pw" />
+            </td>
+          </tr>
+          <tr>
+            <th>성명</th>
+            <td>
+              <input type="text" name="" id="name" />
+            </td>
+          </tr>
+          <tr>
+            <th>E-Mail</th>
+            <td>
+              <input type="text" name="emailF" />@
+              <input type="text" name="" id="emailB" />
+              <select>
+                <option>직접입력</option>
+                <option>naver.com</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>핸드폰</th>
+            <td>
+              <select required>
+                <option value="">번호선택</option>
+                <option value="010">010</option>
+              </select>
+              <input type="text" name="" id="phoneF" />-
+              <input type="text" name="" id="phoneN" />
+            </td>
+          </tr>
+          <tr>
+            <th>성별</th>
+            <td>
+              <label for="ma">
+                <input type="radio" name="gener" id="ma" />남자</label
+              >
+              <label for="fm">
+                <input type="radio" name="gener" id="fm" />여자</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <th>취미</th>
+            <td>
+              <label for="s">
+                <input type="checkbox" name="hobby" id="s" />공부</label
+              >
+              <label for="m">
+                <input type="checkbox" name="hobby" id="m" />등산</label
+              >
+              <label for="g">
+                <input type="checkbox" name="hobby" id="g" />게임</label
+              >
+              <label for="f">
+                <input type="checkbox" name="hobby" id="f" />낚시</label
+              >
+              <label for="p">
+                <input type="checkbox" name="hobby" id="p" />쇼핑</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <th>자기소개</th>
+            <td>
+              <textarea
+                name=""
+                id="intro"
+                cols="60"
+                rows="5"
+                maxlength="100"
+                placeholder="자기소개를 100자 이내로 입력하세요"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td id="colspan" colspan="2">
+              <input type="submit" value="회원가입" /><input
+                type="reset"
+                value="취소"
+              />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <script>
+      // -------------------- [문항1] --------------------
+      window.setInterval(() => {
+        let date = new Date();
+        area1.innerHTML = date.toTimeString();
+        area1.innerHTML = `현재 시각은 <span id='sc'>${date.getHours()}시 ${date.getMinutes()}분 ${date.getSeconds()}초 </span>입니다.`;
+      }, 1000);
+
+      // -------------------- [문항2] --------------------
+      function testJson() {
+        let jsonStr = `
+          [
+              {
+                "name": "고경희",
+                "major": "컴퓨터공학",
+                "grade": 2,
+                "phone": "010-1111-2222"
+        },
+        {
+            "name ": "홍길동",
+            "major": "컴퓨터공학",
+            "grade": 2,
+            "phone": "010-2222-3333"
+        }   
+    ]
+    `;
+        console.log("jsonStr : ", jsonStr);
+
+        let jsObj = JSON.parse(jsonStr);
+        console.log("jsObj : ", jsObj);
+
+        let jsStr = JSON.stringify(jsObj);
+        console.log("jsStr : ", jsStr);
+      }
+
+      // -------------------- [문항3] --------------------
+      function validateForm() {
+        var checkboxes = document.querySelectorAll(
+          'input[type="checkbox"]:checked'
+        );
+        if (checkboxes.length < 2) {
+          alert("취미는 반드시 2개 이상 선택");
+          return false;
+        }
+      }
+
+      // -------------------- [문항4] --------------------
+      btn2.addEventListener("click", function () {
+        let formDiv = document.querySelector(".formDiv");
+        formDiv.classList.toggle("View");
+      });
+    </script>
+  </body>
+</html>
