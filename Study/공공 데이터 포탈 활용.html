@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>공공데이터 포탈 활용</title>
+  </head>
+  <style>
+    h2 {
+      text-align: center;
+    }
+    #result {
+      /* height: 500px; */
+      border: 1px solid #000;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 20px;
+    }
+  </style>
+  <body>
+    <h2>[공공서비스예약 정보]서울시 마포구 문화행사 공공서비스예약 정보</h2>
+    <div id="result"></div>
+    <script>
+      let url =
+        "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?serviceKey=T6p%2F1KPYYChwI77cnJyRt6Y4rCRPpfTnSOpyHUYUKeUQ8fyS9y%2FEPwGmsBpDn4ceAQNm92BrXmpX9C7a6mVVsg%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=20230607&base_time=0630&nx=55&ny=127";
+
+      let url2 =
+        "http://openapi.seoul.go.kr:8088/sample/json/MPListPublicReservationCulture/1/5/";
+      let xhr = new XMLHttpRequest();
+      xhr.open("get", url2);
+      xhr.send();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          let jsObj = JSON.parse(xhr.responseText);
+          console.log(jsObj);
+
+          // for (obj of jsObj.response.body.items.item) {
+          for (obj of jsObj.MPListPublicReservationCulture.row) {
+            result.innerHTML += `<div class="card">`;
+            result.innerHTML += `<h3>${obj.SVCNM}</h3>`;
+            result.innerHTML += `<p> ${obj.PLACENM} </p>`;
+            result.innerHTML += `<a href="${obj.SVCURL}" target="_blank">예약하기</a>`;
+            result.innerHTML += "</div>";
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
