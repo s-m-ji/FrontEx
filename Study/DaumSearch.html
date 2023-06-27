@@ -8,14 +8,102 @@
       rel="stylesheet"
       href="../3JS/2. 변수와 자료형/2. 변수와 자료형.css"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <style>
+      h1,
+      .form {
+        text-align: center;
+      }
+      .resultGroup {
+        margin: 0 0 30px 30px;
+      }
+      .resultGroup div {
+        width: 50%;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <h1>Daum 검색 API</h1>
-    <input type="text" id="searchInput" placeholder="검색어를 입력하세요" />
-    <button onclick="search()">검색</button>
+    <div class="form">
+      <form onsubmit="event.preventDefault(); search();">
+        <input type="text" id="searchInput" placeholder="검색어를 입력하세요" />
+        <button type="submit">검색</button>
+      </form>
+    </div>
     <div id="searchResults"></div>
 
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script src="scriptDmSc.js"></script>
+    <script>
+      function search() {
+        var query = $("#searchInput").val();
+        $.ajax({
+          method: "GET",
+          url: "https://dapi.kakao.com/v2/search/web",
+          data: { query: query },
+          headers: {
+            Authorization: "KakaoAK a32dccc1b49b9e6708b1084872f1b149",
+          },
+        }).done(function (response) {
+          console.log(response);
+          var $searchResults = $("#searchResults");
+          $searchResults.empty();
+          $.each(response.documents, function (index, document) {
+            var $card = $("<div></div>", {
+              class: "card random-color",
+            });
+            var $cardHeader = $("<div></div>", {
+              class: "card-header",
+              text: "Header",
+            });
+            var $cardBody = $("<div></div>", { class: "card-body" });
+            var $cardTitle = $("<h5></h5>", {
+              class: "card-title",
+              html: "<b>" + document.title + "</b>",
+            });
+            var $cardText = $("<p></p>", {
+              class: "card-text",
+              text: document.contents,
+            });
+            var $cardLink = $("<a></a>", {
+              href: document.url,
+              target: "_blank",
+              html: "<b>" + document.title + "</b>",
+            });
+
+            $cardBody.append($cardTitle).append($cardText);
+            $card.append($cardHeader).append($cardBody);
+            $card.click(function () {
+              window.open(document.url, "_blank");
+            });
+
+            $card.hover(
+              function () {
+                $(this).addClass("random-color-hover");
+              },
+              function () {
+                $(this).removeClass("random-color-hover");
+              }
+            );
+
+            $searchResults.append($card);
+          });
+          $searchResults.find(".result-group").fadeIn(400);
+        });
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
