@@ -42,6 +42,7 @@
     </div>
     <div id="searchResults"></div>
 
+    <!--
     <script>
       function search() {
         var query = $("#searchInput").val();
@@ -54,6 +55,7 @@
           },
         }).done(function (response) {
           console.log(response);
+          
           var $searchResults = $("#searchResults");
           $searchResults.empty();
           $.each(response.documents, function (index, document) {
@@ -93,8 +95,56 @@
                 $(this).removeClass("random-color-hover");
               }
             );
-
             $searchResults.append($card);
+
+          });
+          $searchResults.find(".result-group").fadeIn(400);
+          
+          var $searchResults = $("#searchResults");
+      $searchResults.empty();
+      $.each(response.documents, function (index, document) {
+        var $group = $("<div class='result-group'></div>");
+        $group.append(
+          $("<a></a>", {
+            href: document.url,
+            target: "_blank",
+            html: "<b>" + document.title + "</b>",
+          }).html("<b>" + document.title + "</b>")
+        ).append("<br/>")
+          .append($("<div></div>").html(document.contents))
+          .append($("<p></p>").text(document.datetime.substring(0, 10)));
+        $searchResults.append($group);
+        });
+      }
+    </script> -->
+    <script>
+      function search() {
+        var query = $("#searchInput").val();
+        $.ajax({
+          method: "GET",
+          url: "https://dapi.kakao.com/v2/search/web",
+          data: { query: query },
+          headers: {
+            Authorization: "KakaoAK a32dccc1b49b9e6708b1084872f1b149",
+          },
+        }).done(function (response) {
+          console.log(response);
+          var $searchResults = $("#searchResults");
+          $searchResults.empty();
+          $.each(response.documents, function (index, document) {
+            var $group = $("<div class='result-group'></div>");
+            $group
+              .append(
+                $("<a class='btn btn-primary'></a>", {
+                  href: document.url,
+                  target: "_blank",
+                  html: "<b>" + document.title + "</b>",
+                }).html("<b>" + document.title + "</b>")
+              )
+              .append("<br/>")
+              .append($("<div></div>").html(document.contents))
+              .append($("<p></p>").text(document.datetime.substring(0, 10)));
+            $searchResults.append($group);
           });
           $searchResults.find(".result-group").fadeIn(400);
         });
